@@ -1,18 +1,13 @@
 package akkamaddi.goldenglitter.code;
 
-import cpw.mods.fml.client.registry.RenderingRegistry;
-import net.minecraftforge.client.MinecraftForgeClient;
-
-public class ClientProxy extends CommonProxy
+public class ClientProxy extends akkamaddi.akkamaddiCore.api.ClientProxy
 {
     @Override
     public void registerRenderers()
     {
         // This is for rendering entities and so forth later on
+		// Armor Renderers
+		GoldenGlitterCore.rendererRoseGold = addArmor("roseGold");
     }
 
-    public int addArmor(String armor)
-    {
-        return RenderingRegistry.addNewArmourRendererPrefix(armor);
-    }
-}
+} // end class ClientProxy
