@@ -2,13 +2,12 @@ package akkamaddi.goldenglitter.code;
 
 import java.util.Random;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.util.MathHelper;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.world.World;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class RoseStorageBlock extends Block
 {
@@ -20,10 +19,15 @@ public class RoseStorageBlock extends Block
      * @param material = The material of the block. This sets what tools are effective against it, the sounds it makes, etc.
      */
 
-    public RoseStorageBlock(int par1, Material material, String mod)
+    public RoseStorageBlock(Material material, String mod)
     {
-        super(par1, material);
+        super(material);
         this.modName = mod;
+		setHardness(7.0F);
+		setResistance(16.0F);
+		setStepSound(Block.soundTypeMetal);
+		setBlockName("blockRoseGold");
+		setCreativeTab(GoldenGlitterCore.tabAkkamaddiGolden);;
     }
 
     /**
@@ -31,23 +35,24 @@ public class RoseStorageBlock extends Block
      */
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister iconRegister)
+    public void registerBlockIcons(IIconRegister iconRegister)
     {
         this.blockIcon = iconRegister.registerIcon(modName + ":" + (this.getUnlocalizedName().substring(5)));
     }
 
-    @SideOnly(Side.CLIENT)
+    @Override
+	@SideOnly(Side.CLIENT)
     public void randomDisplayTick(World world, int x, int y, int z, Random random)
     {
         if (GoldenGlitterCore.MakeRoseHideous == true)
         {
-            float f1 = (float)x - 0.5F;
-            float f2 = (float)y - 0.5F;
-            float f3 = (float)z - 0.5F;
+            float f1 = x - 0.5F;
+            float f2 = y - 0.5F;
+            float f3 = z - 0.5F;
             float f4 = random.nextFloat() * 2.0f;
             float f5 = random.nextFloat() * 2.0f;
             float f6 = random.nextFloat() * 2.0f;
-            world.spawnParticle("heart", (double)(f1 + f4), (double)(f2 + f5) , (double)(f3 + f6), 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("heart", f1 + f4, f2 + f5 , f3 + f6, 0.0D, 0.0D, 0.0D);
         }
         else
         {

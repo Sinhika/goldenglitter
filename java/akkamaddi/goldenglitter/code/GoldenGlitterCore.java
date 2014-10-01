@@ -1,5 +1,25 @@
 package akkamaddi.goldenglitter.code;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.common.util.EnumHelper;
+import akkamaddi.akkamaddiCore.api.APIcore;
+import akkamaddi.akkamaddiCore.api.CommonProxy;
+import akkamaddi.akkamaddiCore.api.WerewolfHandler;
+import alexndr.SimpleOres.api.content.SimpleArmor;
+import alexndr.SimpleOres.api.content.SimpleAxe;
+import alexndr.SimpleOres.api.content.SimpleHoe;
+import alexndr.SimpleOres.api.content.SimpleIngot;
+import alexndr.SimpleOres.api.content.SimplePickaxe;
+import alexndr.SimpleOres.api.content.SimpleShovel;
+import alexndr.SimpleOres.api.content.SimpleSword;
+import alexndr.SimpleOres.api.content.SimpleTab;
+import alexndr.SimpleOres.api.helpers.LootHelper;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler; // used in 1.6.2
 import cpw.mods.fml.common.Mod.Instance;
@@ -7,34 +27,6 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
-import cpw.mods.fml.common.FMLLog;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
-import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
-import net.minecraft.world.World;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.common.util.EnumHelper;
-import akkamaddi.akkamaddiCore.api.APIcore;
-import akkamaddi.akkamaddiCore.api.CommonProxy;
-import akkamaddi.akkamaddiCore.api.WerewolfHandler;
-import alexndr.SimpleOres.api.content.SimpleIngot;
-import alexndr.SimpleOres.api.content.SimpleSword;
-import alexndr.SimpleOres.api.content.SimpleShovel;
-import alexndr.SimpleOres.api.content.SimpleAxe;
-import alexndr.SimpleOres.api.content.SimplePickaxe;
-import alexndr.SimpleOres.api.content.SimpleHoe;
-import alexndr.SimpleOres.api.content.SimpleArmor;
-import alexndr.SimpleOres.api.content.SimpleTab;
-import alexndr.SimpleOres.api.helpers.LootHelper;
 
 @Mod(modid = "goldenglitter", name = "Simple Golden Glitter, gold alloys", version = "1.4.0", dependencies = "required-after:simpleores ; required-after:fusionplugin ; required-after:akkamaddicore")
 public class GoldenGlitterCore {
@@ -292,34 +284,11 @@ public class GoldenGlitterCore {
 				.setUnlocalizedName("hephaestanGoldPickaxe");
 		
 		// define blocks
-		blockRoseGold = new RoseStorageBlock(Material.iron, "goldenglitter")
-				.setHardness(7.0F).setResistance(16.0F)
-				.setStepSound(Block.soundMetalFootstep)
-				.setUnlocalizedName("blockRoseGold")
-				.setCreativeTab(GoldenGlitterCore.tabAkkamaddiGolden);
-		blockErubescentGold = new ErubescentStorageBlock(Material.iron,
-				"goldenglitter").setHardness(9.0F).setResistance(14.0F)
-				.setStepSound(Block.soundMetalFootstep)
-				.setUnlocalizedName("blockErubescentGold")
-				.setCreativeTab(GoldenGlitterCore.tabAkkamaddiGolden)
-				.setLightValue(0.5F);
-		blockScarlatiteGold = new ScarlatiteStorageBlock(Material.iron,
-				"goldenglitter").setHardness(11.0F).setResistance(18.0F)
-				.setStepSound(Block.soundMetalFootstep)
-				.setUnlocalizedName("blockScarlatiteGold")
-				.setCreativeTab(GoldenGlitterCore.tabAkkamaddiGolden)
-				.setLightValue(1.0F);
-		blockHephaestanGold = new HephaestanStorageBlock(Material.iron,
-				"goldenglitter").setHardness(18.0F).setResistance(24.0F)
-				.setStepSound(Block.soundMetalFootstep)
-				.setUnlocalizedName("blockHephaestanGold")
-				.setCreativeTab(GoldenGlitterCore.tabAkkamaddiGolden)
-				.setLightValue(1.0F);
-		redGoldRail = new RedGoldRail().setHardness(1.0F).setResistance(1.0F)
-				.setStepSound(Block.soundMetalFootstep)
-				.setUnlocalizedName("redGoldRail")
-				.setCreativeTab(GoldenGlitterCore.tabAkkamaddiGolden)
-				.setLightValue(1.0F).setTextureName("redGoldRail");
+		blockRoseGold = new RoseStorageBlock(Material.iron, "goldenglitter");
+		blockErubescentGold = new ErubescentStorageBlock(Material.iron, "goldenglitter");
+		blockScarlatiteGold = new ScarlatiteStorageBlock(Material.iron,	"goldenglitter");
+		blockHephaestanGold = new HephaestanStorageBlock(Material.iron,	"goldenglitter");
+		redGoldRail = new RedGoldRail();
 		
 		// registration
 		// loot
