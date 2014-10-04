@@ -27,6 +27,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = "goldenglitter", name = "Simple Golden Glitter, gold alloys", version = "1.4.0", dependencies = "required-after:simpleores ; required-after:fusionplugin ; required-after:akkamaddicore")
 public class GoldenGlitterCore {
@@ -35,7 +36,8 @@ public class GoldenGlitterCore {
 	public static GoldenGlitterCore instance;
 
 	// Says where the client and server 'proxy' code is loaded.
-	@SidedProxy(clientSide = "akkamaddi.goldenglitter.code.ClientProxy", serverSide = "akkamaddi.akkamaddiCore.code.CommonProxy")
+	@SidedProxy(clientSide = "akkamaddi.goldenglitter.code.ClientProxy", 
+			    serverSide = "akkamaddi.akkamaddiCore.code.CommonProxy")
 	public static CommonProxy proxy;
 
 	// Rose Gold
@@ -99,8 +101,7 @@ public class GoldenGlitterCore {
 	public static boolean enableRecycling;
 
 	// tab
-	public static SimpleTab tabAkkamaddiGolden = new SimpleTab(
-			"tabAkkamaddiGolden");
+	public static SimpleTab tabAkkamaddiGolden = new SimpleTab("tabAkkamaddiGolden");
 
 	/**
 	 * EnumArmorMaterial. In form ("NAME", max damage (like uses, multiply by
@@ -133,7 +134,7 @@ public class GoldenGlitterCore {
 	 * their icon.
 	 */
 	public void setTabIcons() {
-		tabAkkamaddiGolden.setIcon(new ItemStack(GoldenGlitterCore.blockRoseGold));
+		tabAkkamaddiGolden.setIcon(new ItemStack(GoldenGlitterCore.roseGoldIngot, 1));
 	}
 
     /**
@@ -289,7 +290,22 @@ public class GoldenGlitterCore {
 		blockScarlatiteGold = new ScarlatiteStorageBlock(Material.iron,	"goldenglitter");
 		blockHephaestanGold = new HephaestanStorageBlock(Material.iron,	"goldenglitter");
 		redGoldRail = new RedGoldRail();
+		GameRegistry.registerBlock(redGoldRail, "redGoldRail");
 		
+		// harvest levels
+		blockRoseGold.setHarvestLevel( "pickaxe", 0);
+		blockErubescentGold.setHarvestLevel( "pickaxe", 0);
+		blockScarlatiteGold.setHarvestLevel( "pickaxe", 0);
+		blockHephaestanGold.setHarvestLevel( "pickaxe", 0);
+		redGoldRail.setHarvestLevel("pickaxe", 0);
+		
+		// repair materials
+		toolRoseGold.customCraftingMaterial = GoldenGlitterCore.roseGoldIngot;
+		armorRoseGold.customCraftingMaterial = GoldenGlitterCore.roseGoldIngot;
+		toolErubescentGold.customCraftingMaterial = GoldenGlitterCore.erubescentGoldIngot;
+		toolScarlatiteGold.customCraftingMaterial = GoldenGlitterCore.scarlatiteGoldIngot;
+		toolHephaestanGold.customCraftingMaterial = GoldenGlitterCore.hephaestanGoldIngot;
+
 		// registration
 		// loot
 		LootHelper.addLoot("villageBlacksmith", new ItemStack(roseGoldIngot),
@@ -408,19 +424,6 @@ public class GoldenGlitterCore {
 	public void load(FMLInitializationEvent event) 
  	{
 		proxy.registerRenderers();
-		
-		// name stuff
-//		MinecraftForge.setBlockHarvestLevel(blockRoseGold, "pickaxe", 0);
-//		MinecraftForge.setBlockHarvestLevel(blockErubescentGold, "pickaxe", 0);
-//		MinecraftForge.setBlockHarvestLevel(blockScarlatiteGold, "pickaxe", 0);
-//		MinecraftForge.setBlockHarvestLevel(blockHephaestanGold, "pickaxe", 0);
-//		MinecraftForge.setBlockHarvestLevel(redGoldRail, "pickaxe", 0);
-		
-		toolRoseGold.customCraftingMaterial = GoldenGlitterCore.roseGoldIngot;
-		armorRoseGold.customCraftingMaterial = GoldenGlitterCore.roseGoldIngot;
-		toolErubescentGold.customCraftingMaterial = GoldenGlitterCore.erubescentGoldIngot;
-		toolScarlatiteGold.customCraftingMaterial = GoldenGlitterCore.scarlatiteGoldIngot;
-		toolHephaestanGold.customCraftingMaterial = GoldenGlitterCore.hephaestanGoldIngot;
 	}
 
     /**

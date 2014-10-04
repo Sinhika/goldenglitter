@@ -2,17 +2,16 @@ package akkamaddi.goldenglitter.code;
 
 import java.util.Random;
 
+import alexndr.SimpleOres.api.content.SimpleBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class HephaestanStorageBlock extends Block
+public class HephaestanStorageBlock extends SimpleBlock
 {
-    private String modName;
     /**
      * The main constructor for the blocks.
      *
@@ -23,22 +22,13 @@ public class HephaestanStorageBlock extends Block
     public HephaestanStorageBlock(Material material, String mod)
     {
         super(material);
-        this.modName = mod;
+        modId(mod);
 		setHardness(18.0F).setResistance(24.0F);
 		setStepSound(Block.soundTypeMetal);
 		setBlockName("blockHephaestanGold");
 		setCreativeTab(GoldenGlitterCore.tabAkkamaddiGolden);
 		setLightLevel(1.0F);
-    }
-
-    /**
-     * Sets the texture for the block.
-     */
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister)
-    {
-        this.blockIcon = iconRegister.registerIcon(modName + ":" + (this.getUnlocalizedName().substring(5)));
+		setAsBeaconBase(true);
     }
 
     @Override
