@@ -1,5 +1,7 @@
 package akkamaddi.goldenglitter.code;
 
+import java.io.File;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
@@ -29,7 +31,8 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = "goldenglitter", name = "Simple Golden Glitter, gold alloys", version = "1.4.0", dependencies = "required-after:simpleores ; required-after:fusionplugin ; required-after:akkamaddicore")
+@Mod(modid = "goldenglitter", name = "Simple Golden Glitter, gold alloys", version = "1.4.0", 
+dependencies = "required-after:simpleores ; required-after:fusionplugin ; required-after:akkamaddicore")
 public class GoldenGlitterCore {
 	// The instance of your mod that Forge uses.
 	@Instance("goldenglitter")
@@ -144,8 +147,11 @@ public class GoldenGlitterCore {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) 
 	{
-		Configuration config = new Configuration(
-				event.getSuggestedConfigurationFile());
+        File installDir = event.getModConfigurationDirectory();
+        File configDir = new File(installDir, "akkamaddi");
+        File configFile = new File(configDir, "goldenglitter.cfg");
+        Configuration config = new Configuration(configFile);
+
 		config.load();
 		MakeRoseHideous = config.get(Configuration.CATEGORY_GENERAL,
 				"Make Rose Gold Blocks Hideous, false or true", false)
