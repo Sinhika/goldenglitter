@@ -31,7 +31,8 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = "goldenglitter", name = "Simple Golden Glitter, gold alloys", version = "1.4.0", 
+@Mod(modid = "goldenglitter", name = "Simple Golden Glitter, gold alloys", 
+version = "1.7.10-1.4.1", 
 dependencies = "required-after:simpleores ; required-after:fusionplugin ; required-after:akkamaddicore")
 public class GoldenGlitterCore {
 	// The instance of your mod that Forge uses.
@@ -102,6 +103,7 @@ public class GoldenGlitterCore {
 
 	public static boolean werewolfEffectiveness;
 	public static boolean enableRecycling;
+	public static boolean itemizeMobs;
 
 	// tab
 	public static SimpleTab tabAkkamaddiGolden = new SimpleTab("tabAkkamaddiGolden");
@@ -163,6 +165,8 @@ public class GoldenGlitterCore {
 				"Make Scarlatite Gold Blocks sparkle, true or false", true)
 				.getBoolean(true);
 		// booleans
+		itemizeMobs = config.get(Configuration.CATEGORY_GENERAL, 
+				"Equip mobs with Golden gear, true or false", false).getBoolean(false);
 		MakeHephaestanSparkle = config.get(Configuration.CATEGORY_GENERAL,
 				"Make Hephaestan Gold Blocks sparkle, true or false", true)
 				.getBoolean(true);
@@ -418,8 +422,10 @@ public class GoldenGlitterCore {
 		
 		// recipes
 		GlitterRecipes.doGlitterRecipes();
-		
-        APIcore.instance.joinWorldModRegistry.add(new JoinWorldHandler());
+		if (itemizeMobs)
+		{
+			APIcore.instance.joinWorldModRegistry.add(new JoinWorldHandler());
+		}
 
 	} // end preInit()
 
