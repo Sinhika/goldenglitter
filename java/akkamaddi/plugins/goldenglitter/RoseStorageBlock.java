@@ -1,11 +1,11 @@
-package akkamaddi.goldenglitter.code;
+package akkamaddi.plugins.goldenglitter;
 
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
-import alexndr.SimpleOres.api.content.SimpleBlock;
+import alexndr.api.content.blocks.SimpleBlock;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -25,15 +25,15 @@ public class RoseStorageBlock extends SimpleBlock
 		setResistance(16.0F);
 		setStepSound(Block.soundTypeMetal);
 		setBlockName("blockRoseGold");
-		setCreativeTab(GoldenGlitterCore.tabAkkamaddiGolden);
-		setAsBeaconBase(true);
+		setCreativeTab(GoldenGlitter.tabAkkamaddiGolden);
+		setBeaconBase(true);
     }
 
     @Override
 	@SideOnly(Side.CLIENT)
     public void randomDisplayTick(World world, int x, int y, int z, Random random)
     {
-        if (GoldenGlitterCore.MakeRoseHideous == true)
+        if (Settings.MakeRoseHideous == true)
         {
             float f1 = x - 0.5F;
             float f2 = y - 0.5F;

@@ -1,8 +1,8 @@
-package akkamaddi.goldenglitter.code;
+package akkamaddi.plugins.goldenglitter;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
-import alexndr.SimpleOres.api.content.SimpleSword;
+import alexndr.api.content.items.SimpleSword;
 
 public class HephaestanSword extends SimpleSword
 {
@@ -14,7 +14,7 @@ public class HephaestanSword extends SimpleSword
     @Override
     public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase par2EntityLivingBase, EntityLivingBase par3EntityLivingBase)
     {
-        if (this == GoldenGlitterCore.hephaestanGoldSword)
+        if (this == Content.hephaestanGoldSword)
         {
             par1ItemStack.damageItem(1, par3EntityLivingBase);
             par2EntityLivingBase.setFire(50);
