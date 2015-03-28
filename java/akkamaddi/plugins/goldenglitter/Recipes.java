@@ -1,13 +1,14 @@
 package akkamaddi.plugins.goldenglitter;
 
-import akkamaddi.plugins.simpletungsten.ModInfo;
-import alexndr.api.core.LogHelper;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import alexndr.api.core.LogHelper;
+import alexndr.plugins.Fusion.FusionFurnaceRecipes;
+import alexndr.plugins.Fusion.FusionMaterial;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Recipes
@@ -49,13 +50,13 @@ public class Recipes
     {
         // Ore Dictionary
         OreDictionary.registerOre("ingotRoseGold", new ItemStack(
-                GoldenGlitter.roseGoldIngot));
+                Content.roseGoldIngot));
         OreDictionary.registerOre("ingotErubescentGold", new ItemStack(
-                GoldenGlitter.erubescentGoldIngot));
+                Content.erubescentGoldIngot));
         OreDictionary.registerOre("ingotScarlatiteGold", new ItemStack(
-                GoldenGlitter.scarlatiteGoldIngot));
+                Content.scarlatiteGoldIngot));
         OreDictionary.registerOre("ingotHephaestanGold", new ItemStack(
-                GoldenGlitter.hephaestanGoldIngot));
+                Content.hephaestanGoldIngot));
     } // end addOreDictEntries()
     
     @SuppressWarnings("unchecked")
@@ -63,127 +64,175 @@ public class Recipes
     {
         // recipes: Crafting
         //Storage Block
-        GameRegistry.addRecipe(new ItemStack(GoldenGlitter.blockRoseGold, 1), new Object[] {"AAA", "AAA", "AAA", 'A', GoldenGlitter.roseGoldIngot});
-        GameRegistry.addRecipe(new ItemStack(GoldenGlitter.blockErubescentGold, 1), new Object[] {"AAA", "AAA", "AAA", 'A', GoldenGlitter.erubescentGoldIngot});
-        GameRegistry.addRecipe(new ItemStack(GoldenGlitter.blockScarlatiteGold, 1), new Object[] {"AAA", "AAA", "AAA", 'A', GoldenGlitter.scarlatiteGoldIngot});
-        GameRegistry.addRecipe(new ItemStack(GoldenGlitter.blockHephaestanGold, 1), new Object[] {"AAA", "AAA", "AAA", 'A', GoldenGlitter.hephaestanGoldIngot});
+        GameRegistry
+                .addRecipe(new ItemStack(Content.blockRoseGold, 1),
+                        new Object[] { "AAA", "AAA", "AAA", 'A',
+                                Content.roseGoldIngot });
+        GameRegistry.addRecipe(new ItemStack(Content.blockErubescentGold, 1),
+                new Object[] { "AAA", "AAA", "AAA", 'A',
+                        Content.erubescentGoldIngot });
+        GameRegistry.addRecipe(new ItemStack(Content.blockScarlatiteGold, 1),
+                new Object[] { "AAA", "AAA", "AAA", 'A',
+                        Content.scarlatiteGoldIngot });
+        GameRegistry.addRecipe(new ItemStack(Content.blockHephaestanGold, 1),
+                new Object[] { "AAA", "AAA", "AAA", 'A',
+                        Content.hephaestanGoldIngot });
+        
         //Item Recipe
         //Ingot Recipe
-        GameRegistry.addShapelessRecipe(new ItemStack(GoldenGlitter.roseGoldIngot, 9), new Object[]
-                                        {
-                                            GoldenGlitter.blockRoseGold
-                                        });
-        GameRegistry.addShapelessRecipe(new ItemStack(GoldenGlitter.erubescentGoldIngot, 9), new Object[]
-                                        {
-                                            GoldenGlitter.blockErubescentGold
-                                        });
-        GameRegistry.addShapelessRecipe(new ItemStack(GoldenGlitter.scarlatiteGoldIngot, 9), new Object[]
-                                        {
-                                            GoldenGlitter.blockScarlatiteGold
-                                        });
-        GameRegistry.addShapelessRecipe(new ItemStack(GoldenGlitter.hephaestanGoldIngot, 9), new Object[]
-                                        {
-                                            GoldenGlitter.blockHephaestanGold
-                                        });
+        GameRegistry.addShapelessRecipe(
+                new ItemStack(Content.roseGoldIngot, 9),
+                new Object[] { Content.blockRoseGold });
+        GameRegistry.addShapelessRecipe(new ItemStack(
+                Content.erubescentGoldIngot, 9),
+                new Object[] { Content.blockErubescentGold });
+        GameRegistry.addShapelessRecipe(new ItemStack(
+                Content.scarlatiteGoldIngot, 9),
+                new Object[] { Content.blockScarlatiteGold });
+        GameRegistry.addShapelessRecipe(new ItemStack(
+                Content.hephaestanGoldIngot, 9),
+                new Object[] { Content.blockHephaestanGold });
+        
         // Tools
         //Rose Gold Tool Recipes
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.roseGoldPickaxe, true, new Object[]
-                {
-                    "XXX", " Y ", " Y ", 'X', "ingotRoseGold", 'Y', "stickWood"
-                }));
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.roseGoldAxe, true, new Object[]
-                {
-                    "XX ", "XY ", " Y ", 'X', "ingotRoseGold", 'Y', "stickWood"
-                }));
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.roseGoldShovel, true, new Object[]
-                {
-                    "X", "Y", "Y", 'X', "ingotRoseGold", 'Y', "stickWood"
-                }));
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.roseGoldSword, true, new Object[]
-                {
-                    "X", "X", "Y", 'X', "ingotRoseGold", 'Y', "stickWood"
-                }));
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.roseGoldHoe, true, new Object[]
-                {
-                    "XX ", " Y ", " Y ", 'X', "ingotRoseGold", 'Y', "stickWood"
-                }));
-        //Rose Gold Armor
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.roseGoldHelm, true, new Object[]
-                {
-                    "XXX", "X X", 'X', "ingotRoseGold"
-                }));
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.roseGoldChest, true, new Object[]
-                {
-                    "X X", "XXX", "XXX", 'X', "ingotRoseGold"
-                }));
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.roseGoldLegs, true, new Object[]
-                {
-                    "XXX", "X X", "X X", 'X', "ingotRoseGold"
-                }));
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.roseGoldBoots, true, new Object[]
-                {
-                    "X X", "X X", 'X', "ingotRoseGold"
-                }));
-        //Erubescent Gold Tools
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.erubescentGoldPickaxe, true, new Object[]
-                {
-                    "XXX", " Y ", " Y ", 'X', "ingotErubescentGold", 'Y', "stickWood"
-                }));
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.erubescentGoldAxe, true, new Object[]
-                {
-                    "XX ", "XY ", " Y ", 'X', "ingotErubescentGold", 'Y', "stickWood"
-                }));
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.erubescentGoldShovel, true, new Object[]
-                {
-                    "X", "Y", "Y", 'X', "ingotErubescentGold", 'Y', "stickWood"
-                }));
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.erubescentGoldSword, true, new Object[]
-                {
-                    "X", "X", "Y", 'X', "ingotErubescentGold", 'Y', "stickWood"
-                }));
-        //Scarlatite Gold Tools
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.scarlatiteGoldPickaxe, true, new Object[]
-                {
-                    "XXX", " Y ", " Y ", 'X', "ingotScarlatiteGold", 'Y', "stickWood"
-                }));
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.scarlatiteGoldAxe, true, new Object[]
-                {
-                    "XX ", "XY ", " Y ", 'X', "ingotScarlatiteGold", 'Y', "stickWood"
-                }));
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.scarlatiteGoldShovel, true, new Object[]
-                {
-                    "X", "Y", "Y", 'X', "ingotScarlatiteGold", 'Y', "stickWood"
-                }));
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.scarlatiteGoldSword, true, new Object[]
-                {
-                    "X", "X", "Y", 'X', "ingotScarlatiteGold", 'Y', "stickWood"
-                }));
-        //Hephaestan Gold Tools
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.hephaestanGoldPickaxe, true, new Object[]
-                {
-                    "XXX", " Y ", " Y ", 'X', "ingotHephaestanGold", 'Y', "stickWood"
-                }));
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.hephaestanGoldAxe, true, new Object[]
-                {
-                    "XX ", "XY ", " Y ", 'X', "ingotHephaestanGold", 'Y', "stickWood"
-                }));
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.hephaestanGoldShovel, true, new Object[]
-                {
-                    "X", "Y", "Y", 'X', "ingotHephaestanGold", 'Y', "stickWood"
-                }));
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(GoldenGlitter.hephaestanGoldSword, true, new Object[]
-                {
-                    "X", "X", "Y", 'X', "ingotHephaestanGold", 'Y', "stickWood"
-                }));
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.roseGoldPickaxe, true,
+                        new Object[] { "XXX", " Y ", " Y ", 'X',
+                                "ingotRoseGold", 'Y', "stickWood" }));
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.roseGoldAxe, true,
+                        new Object[] { "XX ", "XY ", " Y ", 'X',
+                                "ingotRoseGold", 'Y', "stickWood" }));
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.roseGoldShovel, true,
+                        new Object[] { "X", "Y", "Y", 'X', "ingotRoseGold",
+                                'Y', "stickWood" }));
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.roseGoldSword, true,
+                        new Object[] { "X", "X", "Y", 'X', "ingotRoseGold",
+                                'Y', "stickWood" }));
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.roseGoldHoe, true,
+                        new Object[] { "XX ", " Y ", " Y ", 'X',
+                                "ingotRoseGold", 'Y', "stickWood" }));
+        // Rose Gold Armor
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.roseGoldHelm, true,
+                        new Object[] { "XXX", "X X", 'X', "ingotRoseGold" }));
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.roseGoldChest, true,
+                        new Object[] { "X X", "XXX", "XXX", 'X',
+                                "ingotRoseGold" }));
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.roseGoldLegs, true,
+                        new Object[] { "XXX", "X X", "X X", 'X',
+                                "ingotRoseGold" }));
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.roseGoldBoots, true,
+                        new Object[] { "X X", "X X", 'X', "ingotRoseGold" }));
+        // Erubescent Gold Tools
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.erubescentGoldPickaxe,
+                        true, new Object[] { "XXX", " Y ", " Y ", 'X',
+                                "ingotErubescentGold", 'Y', "stickWood" }));
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.erubescentGoldAxe, true,
+                        new Object[] { "XX ", "XY ", " Y ", 'X',
+                                "ingotErubescentGold", 'Y', "stickWood" }));
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.erubescentGoldShovel,
+                        true, new Object[] { "X", "Y", "Y", 'X',
+                                "ingotErubescentGold", 'Y', "stickWood" }));
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.erubescentGoldSword,
+                        true, new Object[] { "X", "X", "Y", 'X',
+                                "ingotErubescentGold", 'Y', "stickWood" }));
+        
+        // Scarlatite Gold Tools
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.scarlatiteGoldPickaxe, true,
+                        new Object[] { "XXX", " Y ", " Y ", 'X',
+                                "ingotScarlatiteGold", 'Y', "stickWood" }));
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.scarlatiteGoldAxe, true,
+                        new Object[] { "XX ", "XY ", " Y ", 'X',
+                                "ingotScarlatiteGold", 'Y', "stickWood" }));
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.scarlatiteGoldShovel, true,
+                        new Object[] { "X", "Y", "Y", 'X',
+                                "ingotScarlatiteGold", 'Y', "stickWood" }));
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.scarlatiteGoldSword, true,
+                        new Object[] { "X", "X", "Y", 'X',
+                                "ingotScarlatiteGold", 'Y', "stickWood" }));
+        // Hephaestan Gold Tools
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.hephaestanGoldPickaxe, true,
+                        new Object[] { "XXX", " Y ", " Y ", 'X',
+                                "ingotHephaestanGold", 'Y', "stickWood" }));
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.hephaestanGoldAxe, true,
+                        new Object[] { "XX ", "XY ", " Y ", 'X',
+                                "ingotHephaestanGold", 'Y', "stickWood" }));
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.hephaestanGoldShovel, true,
+                        new Object[] { "X", "Y", "Y", 'X',
+                                "ingotHephaestanGold", 'Y', "stickWood" }));
+        CraftingManager
+                .getInstance()
+                .getRecipeList()
+                .add(new ShapedOreRecipe(Content.hephaestanGoldSword, true,
+                        new Object[] { "X", "X", "Y", 'X',
+                                "ingotHephaestanGold", 'Y', "stickWood" }));
         
         // Red Gold Rail
 		GameRegistry.addShapelessRecipe(new ItemStack(
-				GoldenGlitter.redGoldRail, 3), new Object[] {
-				GoldenGlitter.erubescentGoldIngot, Blocks.rail, Blocks.rail,
+				Content.redGoldRail, 3), new Object[] {
+				Content.erubescentGoldIngot, Blocks.rail, Blocks.rail,
 				Blocks.rail });
 		GameRegistry.addShapelessRecipe(new ItemStack(
-				GoldenGlitter.redGoldRail, 8), new Object[] {
-				GoldenGlitter.scarlatiteGoldIngot, Blocks.rail, Blocks.rail,
+				Content.redGoldRail, 8), new Object[] {
+				Content.scarlatiteGoldIngot, Blocks.rail, Blocks.rail,
 				Blocks.rail, Blocks.rail, Blocks.rail, Blocks.rail, Blocks.rail,
 				Blocks.rail });
 
@@ -192,43 +241,42 @@ public class Recipes
     private static void addFurnaceRecipes()
     {
         // recipes: Smelting
-        GameRegistry.addSmelting(
-                GoldenGlitter.largeRoseGoldChunkItem, new ItemStack(
-                        GoldenGlitter.roseGoldIngot), 0.8F);
-        GameRegistry.addSmelting(
-                GoldenGlitter.largeErubescentGoldChunkItem,
-                new ItemStack(GoldenGlitter.erubescentGoldIngot), 3.0F);
-        GameRegistry.addSmelting(
-                GoldenGlitter.largeScarlatiteGoldChunkItem,
-                new ItemStack(GoldenGlitter.scarlatiteGoldIngot), 6.0F);
-        GameRegistry.addSmelting(
-                GoldenGlitter.largeHephaestanGoldChunkItem,
-                new ItemStack(GoldenGlitter.hephaestanGoldIngot), 9.0F);
+        GameRegistry.addSmelting(Content.largeRoseGoldChunkItem, new ItemStack(
+                Content.roseGoldIngot), 0.8F);
+        GameRegistry.addSmelting(Content.largeErubescentGoldChunkItem,
+                new ItemStack(Content.erubescentGoldIngot), 3.0F);
+        GameRegistry.addSmelting(Content.largeScarlatiteGoldChunkItem,
+                new ItemStack(Content.scarlatiteGoldIngot), 6.0F);
+        GameRegistry.addSmelting(Content.largeHephaestanGoldChunkItem,
+                new ItemStack(Content.hephaestanGoldIngot), 9.0F);
         
     } // end addFurnaceRecipes
     
     private static void addFusionRecipes()
     {
         // recipes: Fusion Furnace
-        FusionRecipes.addSmelting(
-                new ItemStack(Content.copper_ingot),
-                new ItemStack(Items.gold_nugget),
-                new ItemStack(Items.dye, 1, 1),
-                new ItemStack(GoldenGlitter.largeRoseGoldChunkItem), 6.0F);
-        FusionRecipes.addSmelting(
-                new ItemStack(Items.redstone), new ItemStack(Items.redstone),
-                new ItemStack(Items.gold_ingot),
-                new ItemStack(GoldenGlitter.largeErubescentGoldChunkItem),
+        FusionFurnaceRecipes.addSmelting(
+                FusionMaterial.of("ingotCopper"),
+                FusionMaterial.of(new ItemStack(Items.gold_nugget)),
+                FusionMaterial.of(new ItemStack(Items.dye, 1, 1)),
+                new ItemStack(Content.largeRoseGoldChunkItem), 6.0F);
+        FusionFurnaceRecipes.addSmelting(
+                FusionMaterial.of(new ItemStack(Items.redstone)),
+                FusionMaterial.of(new ItemStack(Items.redstone)),
+                FusionMaterial.of(new ItemStack(Items.gold_ingot)),
+                new ItemStack(Content.largeErubescentGoldChunkItem),
                 12.0F);
-        FusionRecipes.addSmelting(
-                new ItemStack(Items.redstone), new ItemStack(Items.redstone),
-                new ItemStack(GoldenGlitter.erubescentGoldIngot),
-                new ItemStack(GoldenGlitter.largeScarlatiteGoldChunkItem),
+        FusionFurnaceRecipes.addSmelting(
+                FusionMaterial.of(new ItemStack(Items.redstone)), 
+                FusionMaterial.of(new ItemStack(Items.redstone)),
+                FusionMaterial.of(new ItemStack(Content.erubescentGoldIngot)),
+                new ItemStack(Content.largeScarlatiteGoldChunkItem),
                 20.0F);
-        FusionRecipes.addSmelting(
-                new ItemStack(Items.lava_bucket), new ItemStack(Items.lava_bucket),
-                new ItemStack(GoldenGlitter.scarlatiteGoldIngot),
-                new ItemStack(GoldenGlitter.largeHephaestanGoldChunkItem),
+        FusionFurnaceRecipes.addSmelting(
+                FusionMaterial.of(new ItemStack(Items.lava_bucket)), 
+                FusionMaterial.of(new ItemStack(Items.lava_bucket)),
+                FusionMaterial.of(new ItemStack(Content.scarlatiteGoldIngot)),
+                new ItemStack(Content.largeHephaestanGoldChunkItem),
                 20.0F);
         
     } // end addFusionRecipes
@@ -236,142 +284,140 @@ public class Recipes
     private static void addRecyclingRecipes()
     {
         // rose gold
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.roseGoldHelm, 1,
-                OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
+        FusionFurnaceRecipes.addSmelting(
+                new ItemStack( Content.roseGoldHelm, 1, OreDictionary.WILDCARD_VALUE), 
+                new ItemStack(Blocks.gravel),
                 new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE),
-                new ItemStack(GoldenGlitter.largeRoseGoldChunkItem),
+                new ItemStack(Content.largeRoseGoldChunkItem),
                 10.0F);
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.roseGoldChest, 1,
-                OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel,
-                2, 0), new ItemStack(Items.coal, 2,
-                OreDictionary.WILDCARD_VALUE), new ItemStack(
-                GoldenGlitter.largeRoseGoldChunkItem, 2, 0), 20.0F);
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.roseGoldLegs, 1,
-                OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel,
-                2, 0), new ItemStack(Items.coal, 2,
-                OreDictionary.WILDCARD_VALUE), new ItemStack(
-                GoldenGlitter.largeRoseGoldChunkItem, 2, 0), 20.0F);
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.roseGoldBoots, 1,
+        FusionFurnaceRecipes.addSmelting(
+                new ItemStack(Content.roseGoldChest, 1,OreDictionary.WILDCARD_VALUE), 
+                new ItemStack(Blocks.gravel, 2, 0), 
+                new ItemStack(Items.coal, 2, OreDictionary.WILDCARD_VALUE), 
+                new ItemStack(Content.largeRoseGoldChunkItem, 2, 0), 20.0F);
+        FusionFurnaceRecipes.addSmelting(
+                new ItemStack(Content.roseGoldLegs, 1, OreDictionary.WILDCARD_VALUE), 
+                new ItemStack(Blocks.gravel, 2, 0), 
+                new ItemStack(Items.coal, 2, OreDictionary.WILDCARD_VALUE), 
+                new ItemStack(Content.largeRoseGoldChunkItem, 2, 0), 20.0F);
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.roseGoldBoots, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE),
-                new ItemStack(GoldenGlitter.largeRoseGoldChunkItem),
+                new ItemStack(Content.largeRoseGoldChunkItem),
                 10.0F);
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.roseGoldSword, 1,
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.roseGoldSword, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE),
-                new ItemStack(GoldenGlitter.largeRoseGoldChunkItem),
+                new ItemStack(Content.largeRoseGoldChunkItem),
                 10.0F);
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.roseGoldShovel, 1,
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.roseGoldShovel, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE),
-                new ItemStack(GoldenGlitter.largeRoseGoldChunkItem),
+                new ItemStack(Content.largeRoseGoldChunkItem),
                 10.0F);
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.roseGoldPickaxe, 1,
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.roseGoldPickaxe, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE),
-                new ItemStack(GoldenGlitter.largeRoseGoldChunkItem),
+                new ItemStack(Content.largeRoseGoldChunkItem),
                 10.0F);
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.roseGoldAxe, 1,
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.roseGoldAxe, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE),
-                new ItemStack(GoldenGlitter.largeRoseGoldChunkItem),
+                new ItemStack(Content.largeRoseGoldChunkItem),
                 10.0F);
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.roseGoldHoe, 1,
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.roseGoldHoe, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE),
-                new ItemStack(GoldenGlitter.largeRoseGoldChunkItem),
+                new ItemStack(Content.largeRoseGoldChunkItem),
                 10.0F);
         // erubescent gold
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.erubescentGoldSword, 1,
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.erubescentGoldSword, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE),
                 new ItemStack(
-                        GoldenGlitter.largeErubescentGoldChunkItem),
+                        Content.largeErubescentGoldChunkItem),
                 15.0F);
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.erubescentGoldShovel, 1,
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.erubescentGoldShovel, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE),
                 new ItemStack(
-                        GoldenGlitter.largeErubescentGoldChunkItem),
+                        Content.largeErubescentGoldChunkItem),
                 15.0F);
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.erubescentGoldAxe, 1,
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.erubescentGoldAxe, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE),
                 new ItemStack(
-                        GoldenGlitter.largeErubescentGoldChunkItem),
+                        Content.largeErubescentGoldChunkItem),
                 15.0F);
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.erubescentGoldPickaxe, 1,
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.erubescentGoldPickaxe, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE),
                 new ItemStack(
-                        GoldenGlitter.largeErubescentGoldChunkItem),
+                        Content.largeErubescentGoldChunkItem),
                 15.0F);
         // scarlatite gold
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.scarlatiteGoldSword, 1,
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.scarlatiteGoldSword, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE),
                 new ItemStack(
-                        GoldenGlitter.largeScarlatiteGoldChunkItem),
+                        Content.largeScarlatiteGoldChunkItem),
                 20.0F);
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.scarlatiteGoldShovel, 1,
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.scarlatiteGoldShovel, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE),
                 new ItemStack(
-                        GoldenGlitter.largeScarlatiteGoldChunkItem),
+                        Content.largeScarlatiteGoldChunkItem),
                 20.0F);
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.scarlatiteGoldAxe, 1,
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.scarlatiteGoldAxe, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE),
                 new ItemStack(
-                        GoldenGlitter.largeScarlatiteGoldChunkItem),
+                        Content.largeScarlatiteGoldChunkItem),
                 20.0F);
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.scarlatiteGoldPickaxe, 1,
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.scarlatiteGoldPickaxe, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.coal, 1, OreDictionary.WILDCARD_VALUE),
                 new ItemStack(
-                        GoldenGlitter.largeScarlatiteGoldChunkItem),
+                        Content.largeScarlatiteGoldChunkItem),
                 20.0F);
         // hephaestan gold
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.hephaestanGoldSword, 1,
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.hephaestanGoldSword, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.lava_bucket), new ItemStack(
-                        GoldenGlitter.largeHephaestanGoldChunkItem),
+                        Content.largeHephaestanGoldChunkItem),
                 25.0F);
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.hephaestanGoldShovel, 1,
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.hephaestanGoldShovel, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.lava_bucket), new ItemStack(
-                        GoldenGlitter.largeHephaestanGoldChunkItem),
+                        Content.largeHephaestanGoldChunkItem),
                 25.0F);
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.hephaestanGoldAxe, 1,
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.hephaestanGoldAxe, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.lava_bucket), new ItemStack(
-                        GoldenGlitter.largeHephaestanGoldChunkItem),
+                        Content.largeHephaestanGoldChunkItem),
                 25.0F);
-        FusionRecipes.addSmelting(new ItemStack(
-                GoldenGlitter.hephaestanGoldPickaxe, 1,
+        FusionFurnaceRecipes.addSmelting(new ItemStack(
+                Content.hephaestanGoldPickaxe, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel),
                 new ItemStack(Items.lava_bucket), new ItemStack(
-                        GoldenGlitter.largeHephaestanGoldChunkItem),
+                        Content.largeHephaestanGoldChunkItem),
                 25.0F);
       
     } // end addRecyclingRecipes

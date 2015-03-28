@@ -1,7 +1,15 @@
 package akkamaddi.plugins.goldenglitter;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import akkamaddi.api.core.LootHelper;
 import akkamaddi.api.core.WerewolfHandler;
+import alexndr.api.content.items.SimpleArmor;
+import alexndr.api.content.items.SimpleAxe;
+import alexndr.api.content.items.SimpleHoe;
+import alexndr.api.content.items.SimpleItem;
+import alexndr.api.content.items.SimplePickaxe;
+import alexndr.api.content.items.SimpleShovel;
+import alexndr.api.content.items.SimpleSword;
 import alexndr.api.core.LogHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -61,19 +69,19 @@ public class Content
 
     public static void doArmor()
     {
-        roseGoldHelm = new SimpleArmor(armorRoseGold, 0)
+        roseGoldHelm = new SimpleArmor(GoldenGlitter.armorRoseGold, 0)
                 .modId(ModInfo.ID).setType("roseGold")
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("roseGoldHelm");
-        roseGoldChest = new SimpleArmor(armorRoseGold, 1)
+        roseGoldChest = new SimpleArmor(GoldenGlitter.armorRoseGold, 1)
                 .modId(ModInfo.ID).setType("roseGold")
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("roseGoldChest");
-        roseGoldLegs = new SimpleArmor(armorRoseGold, 2)
+        roseGoldLegs = new SimpleArmor(GoldenGlitter.armorRoseGold, 2)
                 .modId(ModInfo.ID).setType("roseGold")
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("roseGoldLegs");
-        roseGoldBoots = new SimpleArmor(armorRoseGold, 3)
+        roseGoldBoots = new SimpleArmor(GoldenGlitter.armorRoseGold, 3)
                 .modId(ModInfo.ID).setType("roseGold")
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("roseGoldBoots");
@@ -82,87 +90,99 @@ public class Content
 
     public static void doTools()
     {
-        roseGoldSword = new SimpleSword(toolRoseGold).modId(ModInfo.ID)
+        roseGoldSword = new SimpleSword(GoldenGlitter.toolRoseGold).modId(ModInfo.ID)
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("roseGoldSword");
-        roseGoldShovel = new SimpleShovel(toolRoseGold).modId(ModInfo.ID)
+        roseGoldShovel = new SimpleShovel(GoldenGlitter.toolRoseGold).modId(ModInfo.ID)
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("roseGoldShovel");
-        roseGoldAxe = new SimpleAxe(toolRoseGold).modId(ModInfo.ID)
+        roseGoldAxe = new SimpleAxe(GoldenGlitter.toolRoseGold).modId(ModInfo.ID)
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("roseGoldAxe");
-        roseGoldPickaxe = new SimplePickaxe(toolRoseGold)
+        roseGoldPickaxe = new SimplePickaxe(GoldenGlitter.toolRoseGold)
                 .modId(ModInfo.ID)
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("roseGoldPickaxe");
-        roseGoldHoe = new SimpleHoe(toolRoseGold).modId(ModInfo.ID)
+        roseGoldHoe = new SimpleHoe(GoldenGlitter.toolRoseGold).modId(ModInfo.ID)
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("roseGoldHoe");
-        erubescentGoldSword = new SimpleSword(toolErubescentGold)
+        erubescentGoldSword = new SimpleSword(GoldenGlitter.toolErubescentGold)
                 .modId("goldenglitter")
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("erubescentGoldSword");
-        erubescentGoldShovel = new SimpleShovel(toolErubescentGold)
+        erubescentGoldShovel = new SimpleShovel(GoldenGlitter.toolErubescentGold)
                 .modId("goldenglitter")
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("erubescentGoldShovel");
-        erubescentGoldAxe = new SimpleAxe(toolErubescentGold)
+        erubescentGoldAxe = new SimpleAxe(GoldenGlitter.toolErubescentGold)
                 .modId("goldenglitter")
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("erubescentGoldAxe");
-        erubescentGoldPickaxe = new SimplePickaxe(toolErubescentGold)
+        erubescentGoldPickaxe = new SimplePickaxe(GoldenGlitter.toolErubescentGold)
                 .modId("goldenglitter")
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("erubescentGoldPickaxe");
 
-        scarlatiteGoldSword = new SimpleSword(toolScarlatiteGold)
+        scarlatiteGoldSword = new SimpleSword(GoldenGlitter.toolScarlatiteGold)
                 .modId(ModInfo.ID)
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("scarlatiteGoldSword");
-        scarlatiteGoldShovel = new SimpleShovel(toolScarlatiteGold)
+        scarlatiteGoldShovel = new SimpleShovel(GoldenGlitter.toolScarlatiteGold)
                 .modId(ModInfo.ID)
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("scarlatiteGoldShovel");
-        scarlatiteGoldAxe = new SimpleAxe(toolScarlatiteGold)
+        scarlatiteGoldAxe = new SimpleAxe(GoldenGlitter.toolScarlatiteGold)
                 .modId(ModInfo.ID)
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("scarlatiteGoldAxe");
-        scarlatiteGoldPickaxe = new SimplePickaxe(toolScarlatiteGold)
+        scarlatiteGoldPickaxe = new SimplePickaxe(GoldenGlitter.toolScarlatiteGold)
                 .modId(ModInfo.ID)
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("scarlatiteGoldPickaxe");
-        hephaestanGoldSword = new HephaestanSword(toolHephaestanGold)
+        hephaestanGoldSword = new HephaestanSword(GoldenGlitter.toolHephaestanGold)
                 .modId(ModInfo.ID)
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("hephaestanGoldSword");
-        hephaestanGoldShovel = new SimpleShovel(toolHephaestanGold)
+        hephaestanGoldShovel = new SimpleShovel(GoldenGlitter.toolHephaestanGold)
                 .modId(ModInfo.ID)
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("hephaestanGoldShovel");
-        hephaestanGoldAxe = new SimpleAxe(toolHephaestanGold)
+        hephaestanGoldAxe = new SimpleAxe(GoldenGlitter.toolHephaestanGold)
                 .modId(ModInfo.ID)
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("hephaestanGoldAxe");
-        hephaestanGoldPickaxe = new SimplePickaxe(toolHephaestanGold)
+        hephaestanGoldPickaxe = new SimplePickaxe(GoldenGlitter.toolHephaestanGold)
                 .modId(ModInfo.ID)
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("hephaestanGoldPickaxe");
 
         if (Settings.werewolfEffectiveness)
         {
-            WerewolfHandler.Damage2Wolf.put(erubescentGoldShovel, 7.0F);
-            WerewolfHandler.Damage2Wolf.put(erubescentGoldPickaxe, 8.0F);
-            WerewolfHandler.Damage2Wolf.put(erubescentGoldAxe, 9.0F);
-            WerewolfHandler.Damage2Wolf.put(erubescentGoldSword, 10.0F);            
-            WerewolfHandler.Damage2Wolf.put(scarlatiteGoldShovel, 7.0F);
-            WerewolfHandler.Damage2Wolf.put(scarlatiteGoldPickaxe, 8.0F);
-            WerewolfHandler.Damage2Wolf.put(scarlatiteGoldAxe, 9.0F);
-            WerewolfHandler.Damage2Wolf.put(scarlatiteGoldSword, 10.0F);            
-            WerewolfHandler.Damage2Wolf.put(hephaestanGoldShovel, 7.0F);
-            WerewolfHandler.Damage2Wolf.put(hephaestanGoldPickaxe, 8.0F);
-            WerewolfHandler.Damage2Wolf.put(hephaestanGoldAxe, 9.0F);
-            WerewolfHandler.Damage2Wolf.put(hephaestanGoldSword, 10.0F);            
-        }
+            WerewolfHandler.Damage2Wolf.put(erubescentGoldShovel, 
+                    Settings.erubescentGoldDamageVsEntity + 4.0F);
+            WerewolfHandler.Damage2Wolf.put(erubescentGoldPickaxe, 
+                    Settings.erubescentGoldDamageVsEntity + 5.0F);
+            WerewolfHandler.Damage2Wolf.put(erubescentGoldAxe, 
+                    Settings.erubescentGoldDamageVsEntity + 6.0F);
+            WerewolfHandler.Damage2Wolf.put(erubescentGoldSword, 
+                    Settings.erubescentGoldDamageVsEntity + 7.0F);            
+            WerewolfHandler.Damage2Wolf.put(scarlatiteGoldShovel, 
+                    Settings.scarlatiteGoldDamageVsEntity + 4.0F);
+            WerewolfHandler.Damage2Wolf.put(scarlatiteGoldPickaxe, 
+                    Settings.scarlatiteGoldDamageVsEntity + 5.0F);
+            WerewolfHandler.Damage2Wolf.put(scarlatiteGoldAxe, 
+                    Settings.scarlatiteGoldDamageVsEntity + 6.0F);
+            WerewolfHandler.Damage2Wolf.put(scarlatiteGoldSword, 
+                    Settings.scarlatiteGoldDamageVsEntity + 7.0F);            
+            WerewolfHandler.Damage2Wolf.put(hephaestanGoldShovel, 
+                    Settings.hephaestanGoldDamageVsEntity + 4.0F);
+            WerewolfHandler.Damage2Wolf.put(hephaestanGoldPickaxe, 
+                    Settings.hephaestanGoldDamageVsEntity + 5.0F);
+            WerewolfHandler.Damage2Wolf.put(hephaestanGoldAxe, 
+                    Settings.hephaestanGoldDamageVsEntity + 6.0F);
+            WerewolfHandler.Damage2Wolf.put(hephaestanGoldSword, 
+                    Settings.hephaestanGoldDamageVsEntity + 7.0F);            
+        } // end werewolf
 
     } // end doTools()
 
@@ -180,12 +200,14 @@ public class Content
         GameRegistry.registerBlock(redGoldRail, "redGoldRail");
         
         // harvest levels
-        blockRoseGold.setHarvestLevel( "pickaxe", 0);
-        blockErubescentGold.setHarvestLevel( "pickaxe", 0);
-        blockScarlatiteGold.setHarvestLevel( "pickaxe", 0);
-        blockHephaestanGold.setHarvestLevel( "pickaxe", 0);
+        blockRoseGold.setHarvestLevel("pickaxe", Settings.roseGoldHarvestLevel);
+        blockErubescentGold.setHarvestLevel("pickaxe",
+                Settings.erubescentGoldHarvestLevel);
+        blockScarlatiteGold.setHarvestLevel("pickaxe",
+                Settings.scarlatiteGoldHarvestLevel);
+        blockHephaestanGold.setHarvestLevel("pickaxe",
+                Settings.hephaestanGoldHarvestLevel);
         redGoldRail.setHarvestLevel("pickaxe", 0);
-        
 
     } // end doBlocks()
 
@@ -196,31 +218,31 @@ public class Content
     {
         // define items
         // Rose Gold
-        roseGoldIngot = new SimpleIngot().modId(ModInfo.ID)
+        roseGoldIngot = new SimpleItem().modId(ModInfo.ID).isIngot()
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("roseGoldIngot");
-        largeRoseGoldChunkItem = new SimpleIngot().modId(ModInfo.ID)
+        largeRoseGoldChunkItem = new SimpleItem().modId(ModInfo.ID).isIngot()
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("largeRoseGoldChunkItem");
         // Erubescent Gold
-        erubescentGoldIngot = new SimpleIngot().modId(ModInfo.ID)
+        erubescentGoldIngot = new SimpleItem().modId(ModInfo.ID).isIngot()
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("erubescentGoldIngot");
-        largeErubescentGoldChunkItem = new SimpleIngot().modId(ModInfo.ID)
+        largeErubescentGoldChunkItem = new SimpleItem().modId(ModInfo.ID).isIngot()
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("largeErubescentGoldChunkItem");
         // Scarlatite Gold
-        scarlatiteGoldIngot = new SimpleIngot().modId(ModInfo.ID)
+        scarlatiteGoldIngot = new SimpleItem().modId(ModInfo.ID).isIngot()
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("scarlatiteGoldIngot");
-        largeScarlatiteGoldChunkItem = new SimpleIngot().modId(ModInfo.ID)
+        largeScarlatiteGoldChunkItem = new SimpleItem().modId(ModInfo.ID).isIngot()
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("largeScarlatiteGoldChunkItem");
         // Hephaestan Gold
-        hephaestanGoldIngot = new SimpleIngot().modId(ModInfo.ID)
+        hephaestanGoldIngot = new SimpleItem().modId(ModInfo.ID).isIngot()
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("hephaestanGoldIngot");
-        largeHephaestanGoldChunkItem = new SimpleIngot().modId(ModInfo.ID)
+        largeHephaestanGoldChunkItem = new SimpleItem().modId(ModInfo.ID).isIngot()
                 .setCreativeTab(GoldenGlitter.tabAkkamaddiGolden)
                 .setUnlocalizedName("largeHephaestanGoldChunkItem");
         

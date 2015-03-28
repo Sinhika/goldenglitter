@@ -1,27 +1,18 @@
 package akkamaddi.plugins.goldenglitter;
 
-import java.io.File;
-
-import alexndr.api.content.inventory.SimpleTab;
-import alexndr.api.core.ContentTypes;
-import alexndr.api.core.LogHelper;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
+import alexndr.api.content.inventory.SimpleTab;
+import alexndr.api.core.ContentTypes;
+import alexndr.api.core.LogHelper;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler; // used in 1.6.2
-import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
+// used in 1.6.2
 
 @Mod(modid = ModInfo.ID, name = ModInfo.NAME, version = ModInfo.VERSION, 
 dependencies = "required-after:simplecore; required-after:simpleores ; required-after:fusion ; required-after:akkamaddicore")
@@ -86,21 +77,37 @@ public class GoldenGlitter
          * pieces for their max damage), new int[] {helmet defense, chestplate
          * defense, leggings defense, boots defense}, enchantability)
          */
-        armorRoseGold = EnumHelper.addArmorMaterial("ROSEGOLD", 10, 
-                                                    new int[] { 2, 4, 2, 1 }, 14);
+        armorRoseGold = EnumHelper.addArmorMaterial("ROSEGOLD",
+                Settings.roseGoldArmorDurability,
+                Settings.roseGoldArmorDamageReduction,
+                Settings.roseGoldArmorEnchantability);
         
         // set tool properties
         // EnumToolMaterial. In form ("NAME", mining level, max uses, speed, damage
         // to entity, enchantability)
-        toolRoseGold = EnumHelper.addToolMaterial(
-                "ROSEGOLD", 1, 240, 9.0F, 1, 14);
-        toolErubescentGold = EnumHelper.addToolMaterial(
-                "ERUBESCENTGOLD", 3, 18, 16.0F, 3, 22);
-        toolScarlatiteGold = EnumHelper.addToolMaterial(
-                "SCARLATITEGOLD", 5, 38, 18.0F, 4, 28);
-        toolHephaestanGold = EnumHelper.addToolMaterial(
-                "HEPHAESTANGOLD", 7, 222, 28.0F, 5, 30);
-   } // end setToolAndArmorStats()
+        toolRoseGold = EnumHelper.addToolMaterial("ROSEGOLD",
+                Settings.roseGoldMiningLevel, Settings.roseGoldUsesNum,
+                Settings.roseGoldMiningSpeed, Settings.roseGoldDamageVsEntity,
+                Settings.roseGoldEnchantability);
+        toolErubescentGold = EnumHelper.addToolMaterial("ERUBESCENTGOLD",
+                Settings.erubescentGoldMiningLevel,
+                Settings.erubescentGoldUsesNum,
+                Settings.erubescentGoldMiningSpeed,
+                Settings.erubescentGoldDamageVsEntity,
+                Settings.erubescentGoldEnchantability);
+        toolScarlatiteGold = EnumHelper.addToolMaterial("SCARLATITEGOLD",
+                Settings.scarlatiteGoldMiningLevel,
+                Settings.scarlatiteGoldUsesNum,
+                Settings.scarlatiteGoldMiningSpeed,
+                Settings.scarlatiteGoldDamageVsEntity,
+                Settings.scarlatiteGoldEnchantability);
+        toolHephaestanGold = EnumHelper.addToolMaterial("HEPHAESTANGOLD",
+                Settings.hephaestanGoldMiningLevel,
+                Settings.hephaestanGoldUsesNum,
+                Settings.hephaestanGoldMiningSpeed,
+                Settings.hephaestanGoldDamageVsEntity,
+                Settings.hephaestanGoldEnchantability);
+  } // end setToolAndArmorStats()
 
     
     /**
@@ -110,10 +117,10 @@ public class GoldenGlitter
     {
         // repair materials
         armorRoseGold.customCraftingMaterial = Content.roseGoldIngot;
-        toolRoseGold.customCraftingMaterial = Content.roseGoldIngot;
-        toolErubescentGold.customCraftingMaterial = Content.erubescentGoldIngot;
-        toolScarlatiteGold.customCraftingMaterial = Content.scarlatiteGoldIngot;
-        toolHephaestanGold.customCraftingMaterial = Content.hephaestanGoldIngot;
+        toolRoseGold.setRepairItem(new ItemStack(Content.roseGoldIngot));
+        toolErubescentGold.setRepairItem(new ItemStack(Content.erubescentGoldIngot));
+        toolScarlatiteGold.setRepairItem(new ItemStack(Content.scarlatiteGoldIngot));
+        toolHephaestanGold.setRepairItem(new ItemStack(Content.hephaestanGoldIngot));
 
     } // end setRepairMaterials()
     

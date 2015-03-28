@@ -22,8 +22,8 @@ public class ScarlatiteStorageBlock extends SimpleBlock
 	public ScarlatiteStorageBlock(Material material, String mod) {
 		super(material);
 		modId(mod);
-		setHardness(11.0F);
-		setResistance(18.0F);
+		setHardness(Settings.scarlatiteGoldHardness);
+		setResistance(Settings.scarlatiteGoldResistance);
 		setStepSound(Block.soundTypeMetal);
 		setBlockName("blockScarlatiteGold");
 		setCreativeTab(GoldenGlitter.tabAkkamaddiGolden);

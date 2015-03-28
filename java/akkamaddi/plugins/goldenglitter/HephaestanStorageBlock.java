@@ -23,7 +23,8 @@ public class HephaestanStorageBlock extends SimpleBlock
     {
         super(material);
         modId(mod);
-		setHardness(18.0F).setResistance(24.0F);
+		setHardness(Settings.hephaestanGoldHardness);
+		setResistance(Settings.hephaestanGoldResistance);
 		setStepSound(Block.soundTypeMetal);
 		setBlockName("blockHephaestanGold");
 		setCreativeTab(GoldenGlitter.tabAkkamaddiGolden);

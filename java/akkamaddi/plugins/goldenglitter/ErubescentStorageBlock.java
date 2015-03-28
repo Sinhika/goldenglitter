@@ -24,8 +24,8 @@ public class ErubescentStorageBlock extends SimpleBlock
     {
         super(material);
         modId(mod);
-		setHardness(9.0F);
-		setResistance(14.0F);
+		setHardness(Settings.erubescentGoldHardness);
+		setResistance(Settings.erubescentGoldResistance);
 		setStepSound(Block.soundTypeMetal);
 		setBlockName("blockErubescentGold");
 		setCreativeTab(GoldenGlitter.tabAkkamaddiGolden);

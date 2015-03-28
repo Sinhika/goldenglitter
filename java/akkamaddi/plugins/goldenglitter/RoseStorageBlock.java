@@ -21,8 +21,8 @@ public class RoseStorageBlock extends SimpleBlock
     {
         super(material);
         modId(mod);
-		setHardness(7.0F);
-		setResistance(16.0F);
+		setHardness(Settings.roseGoldHardness);
+		setResistance(Settings.roseGoldResistance);
 		setStepSound(Block.soundTypeMetal);
 		setBlockName("blockRoseGold");
 		setCreativeTab(GoldenGlitter.tabAkkamaddiGolden);
