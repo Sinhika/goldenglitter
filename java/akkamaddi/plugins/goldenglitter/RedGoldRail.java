@@ -90,27 +90,6 @@ public class RedGoldRail extends BlockRail
     public boolean canProvidePower()
     {
         return true;
-        // end
     }
 
-    /* (non-Javadoc)
-     * @see net.minecraft.block.Block#isProvidingStrongPower(net.minecraft.world.IBlockAccess, int, int, int, int)
-     */
-    @Override
-    public int isProvidingStrongPower(IBlockAccess p_149748_1_,
-            int p_149748_2_, int p_149748_3_, int p_149748_4_, int p_149748_5_)
-    {
-        return 15;
-    }
-
-    /* (non-Javadoc)
-     * @see net.minecraft.block.Block#shouldCheckWeakPower(net.minecraft.world.IBlockAccess, int, int, int, int)
-     */
-    @Override
-    public boolean shouldCheckWeakPower(IBlockAccess world, int x, int y,
-            int z, int side)
-    {
-        return true;
-        // end
-    }
 } // end class RedGoldRail
