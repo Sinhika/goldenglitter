@@ -1,4 +1,4 @@
-package akkamaddi.goldenglitter.code;
+package akkamaddi.plugins.goldenglitter;
 
 import java.util.Random;
 
@@ -24,7 +24,7 @@ public class RedGoldRail extends BlockRail
 		setResistance(1.0F);
 		setStepSound(Block.soundTypeMetal);
 		setBlockName("redGoldRail");
-		setCreativeTab(GoldenGlitterCore.tabAkkamaddiGolden);
+		setCreativeTab(GoldenGlitter.tabAkkamaddiGolden);
 		setLightLevel(1.0F);
 		setBlockTextureName("redGoldRail");
     }
@@ -67,7 +67,7 @@ public class RedGoldRail extends BlockRail
 	@SideOnly(Side.CLIENT)
     public void randomDisplayTick(World world, int x, int y, int z, Random random)
     {
-        if (GoldenGlitterCore.MakeRedGoldRailSparkle == true)
+        if (Settings.MakeRedGoldRailSparkle == true)
         {
             float f1 = x;
             float f2 = y - 0.1F;
@@ -82,4 +82,14 @@ public class RedGoldRail extends BlockRail
             return;
         }
     }
+
+    /* (non-Javadoc)
+     * @see net.minecraft.block.Block#canProvidePower()
+     */
+    @Override
+    public boolean canProvidePower()
+    {
+        return true;
+    }
+
 } // end class RedGoldRail

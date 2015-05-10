@@ -1,4 +1,4 @@
-package akkamaddi.goldenglitter.code;
+package akkamaddi.plugins.goldenglitter;
 
 import java.util.Random;
 
@@ -6,11 +6,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import alexndr.SimpleOres.api.content.SimpleBlock;
+import alexndr.api.content.blocks.SimpleBlock;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ErubescentStorageBlock extends SimpleBlock
+public class ScarlatiteStorageBlock extends SimpleBlock
 {
     /**
      * The main constructor for the blocks.
@@ -19,33 +19,33 @@ public class ErubescentStorageBlock extends SimpleBlock
      * @param material = The material of the block. This sets what tools are effective against it, the sounds it makes, etc.
      */
 
-    public ErubescentStorageBlock(Material material, String mod)
-    {
-        super(material);
-        modId(mod);
-		setHardness(9.0F);
-		setResistance(14.0F);
+	public ScarlatiteStorageBlock(Material material, String mod) {
+		super(material);
+		modId(mod);
+		setHardness(Settings.scarlatiteGoldHardness);
+		setResistance(Settings.scarlatiteGoldResistance);
 		setStepSound(Block.soundTypeMetal);
-		setBlockName("blockErubescentGold");
-		setCreativeTab(GoldenGlitterCore.tabAkkamaddiGolden);
-		setLightLevel(0.5F);
-		setAsBeaconBase(true);
-     }
+		setBlockName("blockScarlatiteGold");
+		setCreativeTab(GoldenGlitter.tabAkkamaddiGolden);
+		setLightLevel(1.0F);
+		setBeaconBase(true);
+	}
 
 
     @Override
 	@SideOnly(Side.CLIENT)
     public void randomDisplayTick(World world, int x, int y, int z, Random random)
     {
-        if (GoldenGlitterCore.MakeErubescentSparkle == true)
+        if (Settings.MakeScarlatiteSparkle == true)
         {
-            float f1 = x - 0.3F;
-            float f2 = y - 0.3F;
-            float f3 = z - 0.3F;
-            float f4 = random.nextFloat() * 1.6f;
-            float f5 = random.nextFloat() * 1.6f;
-            float f6 = random.nextFloat() * 1.6f;
+            float f1 = x - 0.5F;
+            float f2 = y - 0.5F;
+            float f3 = z - 0.5F;
+            float f4 = random.nextFloat() * 2.0F;
+            float f5 = random.nextFloat() * 2.0F;
+            float f6 = random.nextFloat() * 2.0F;
             world.spawnParticle("reddust", f1 + f4, f2 + f5 , f3 + f6, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("instantSpell", (f1 + 0.3) + (f6 * 0.7), (f2 + 0.3) + (f4 * 0.7) , (f3 + 0.3) + (f5 * 0.7), 0.0D, 0.0D, 0.0D);
         }
         else
         {
@@ -70,6 +70,6 @@ public class ErubescentStorageBlock extends SimpleBlock
     @Override
 	public int isProvidingWeakPower(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
     {
-        return 7;
+        return 11;
     }
 }
