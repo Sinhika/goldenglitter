@@ -32,9 +32,9 @@
     "item.goldenglitter.hephaestan_gold_shovel": "Hephaestan Gold Shovel",
     "item.goldenglitter.hephaestan_gold_axe": "Hephaestan Gold Axe",
     "item.goldenglitter.hephaestan_gold_pickaxe": "Hephaestan Gold Pickaxe",
-    "block.goldenglitter.block_rose_gold": "Rose Gold Block",
-    "block.goldenglitter.block_erubescent_gold": "Erubescent Gold Block",
-    "block.goldenglitter.block_scarlatite_gold": "Scarlatite Gold Block",
-    "block.goldenglitter.block_hephaestan_gold": "Hephaestan Gold Block",
+    "block.goldenglitter.rose_gold_block": "Rose Gold Block",
+    "block.goldenglitter.erubescent_gold_block": "Erubescent Gold Block",
+    "block.goldenglitter.scarlatite_gold_block": "Scarlatite Gold Block",
+    "block.goldenglitter.hephaestan_gold_block": "Hephaestan Gold Block",
     "block.goldenglitter.red_gold_rail": "Red Gold Power Rail"
 }
