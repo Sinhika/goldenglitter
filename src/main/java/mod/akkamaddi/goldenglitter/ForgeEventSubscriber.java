@@ -3,6 +3,8 @@ package mod.akkamaddi.goldenglitter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import mod.akkamaddi.goldenglitter.config.GoldenConfig;
+import mod.akkamaddi.goldenglitter.loot.GoldenGlitterInjectionLookup;
 import mod.alexndr.simplecorelib.helpers.LootUtils;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -13,7 +15,7 @@ public final class ForgeEventSubscriber
 {
     @SuppressWarnings("unused")
     private static final Logger LOGGER = LogManager.getLogger(GoldenGlitter.MODID + " Forge Event Subscriber");
-    // private static final GoldenGlitterInjectionLookup lootLookupMap = new GoldenGlitterInjectionLookup();
+     private static final GoldenGlitterInjectionLookup lootLookupMap = new GoldenGlitterInjectionLookup();
 
     /**
      * add mod loot to loot tables. Code heavily based on Botania's LootHandler, which

@@ -3,12 +3,16 @@ package mod.akkamaddi.goldenglitter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import mod.akkamaddi.goldenglitter.config.ConfigHelper;
+import mod.akkamaddi.goldenglitter.config.ConfigHolder;
+import mod.akkamaddi.goldenglitter.config.GoldenConfig;
+import mod.akkamaddi.goldenglitter.init.ModBlocks;
+import mod.akkamaddi.goldenglitter.init.ModTabGroups;
 import mod.alexndr.simplecorelib.config.FlagCondition;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.registry.Registry;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -91,7 +95,7 @@ public final class ModEventSubscriber
     @SubscribeEvent
     public static void onRegisterRecipeSerializers(RegistryEvent.Register<IRecipeSerializer<?>> evt) 
     {
-        CraftingHelper.register(new FlagCondition.Serializer(FusionConfig.INSTANCE, 
+        CraftingHelper.register(new FlagCondition.Serializer(GoldenConfig.INSTANCE, 
                 new ResourceLocation(GoldenGlitter.MODID, "flag")));    
     } // end onRegisterRecipeSerializers
     
