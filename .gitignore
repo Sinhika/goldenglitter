@@ -14,6 +14,7 @@ gradle/
 .project
 .classpath
 *~
+.*.swp
 gradlew
 gradlew.bat
 build.number
