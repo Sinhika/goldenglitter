@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "goldenglitter:item/large_scarlatite_gold_chunk"
+    }
+}

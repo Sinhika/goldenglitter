@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/handheld",
+    "textures": {
+        "layer0": "goldenglitter:item/scarlatite_gold_shovel"
+    }
+}

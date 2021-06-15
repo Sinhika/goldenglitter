@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/handheld",
+    "textures": {
+        "layer0": "goldenglitter:item/hephaestan_gold_pickaxe"
+    }
+}

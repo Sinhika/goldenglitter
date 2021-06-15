@@ -1,0 +1,6 @@
+{
+  "parent": "goldenglitter:block/rail_curved",
+  "textures": {
+    "rail": "goldenglitter:block/red_gold_rail_turned"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "goldenglitter:block/rail_flat",
+  "textures": {
+    "rail": "goldenglitter:block/red_gold_rail"
+  }
+}
