@@ -16,7 +16,7 @@ public final class ClientConfig
         builder.push("General");
         clientMakeRoseHideous  = builder.comment("Make Rose Gold blocks hideous?")
                 .translation(GoldenGlitter.MODID + "config.MakeRoseHideous")
-                .define("MakeRoseHideous", true);
+                .define("MakeRoseHideous", false);
         clientMakeErubescentSparkle  = builder.comment("Make Erubescent Gold blocks sparkle?")
                 .translation(GoldenGlitter.MODID + "config.MakeErubescentSparkle")
                 .define("MakeErubescentSparkle", true);

@@ -14,5 +14,21 @@ public final class ModItems
     // ingots and nuggets
     public static final RegistryObject<Item> rose_gold_ingot = ITEMS.register("rose_gold_ingot", 
             ()-> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> erubescent_gold_ingot = ITEMS.register("erubescent_gold_ingot", 
+            ()-> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> scarlatite_gold_ingot = ITEMS.register("scarlatite_gold_ingot", 
+            ()-> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> hephaestan_gold_ingot = ITEMS.register("hephaestan_gold_ingot", 
+            ()-> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
+    public static final RegistryObject<Item> rose_gold_nugget = ITEMS.register("rose_gold_nugget", 
+            ()-> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> erubescent_gold_nugget = ITEMS.register("erubescent_gold_nugget", 
+            ()-> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> scarlatite_gold_nugget = ITEMS.register("scarlatite_gold_nugget", 
+            ()-> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+    public static final RegistryObject<Item> hephaestan_gold_nugget = ITEMS.register("hephaestan_gold_nugget", 
+            ()-> new Item(new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+
+   
 } // end class
