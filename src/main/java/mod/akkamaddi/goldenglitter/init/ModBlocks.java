@@ -1,10 +1,11 @@
 package mod.akkamaddi.goldenglitter.init;
 
 import mod.akkamaddi.goldenglitter.GoldenGlitter;
+import mod.akkamaddi.goldenglitter.content.ErubescentGoldBlock;
 import mod.akkamaddi.goldenglitter.content.RoseGoldBlock;
 import mod.alexndr.simplecorelib.helpers.LightUtils;
+import mod.alexndr.simplecorelib.helpers.PropertyUtils;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.RailBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -25,16 +26,20 @@ public final class ModBlocks
                     .lightLevel(LightUtils.setFixedLight(15))
                     .strength(0.7F).noCollission().sound(SoundType.METAL))); 
             
-    // storage blocks - TODO change registered class when coded.
+    // storage blocks
     public static final RegistryObject<RoseGoldBlock> rose_gold_block = BLOCKS.register("rose_gold_block",
             () -> new RoseGoldBlock(Block.Properties.of(Material.METAL, MaterialColor.COLOR_PINK)
                     .strength(7.0F, 16.0F).sound(SoundType.METAL)
                     .harvestTool(ToolType.PICKAXE).harvestLevel(0).requiresCorrectToolForDrops())); 
-    public static final RegistryObject<Block> erubescent_gold_block = BLOCKS.register("erubescent_gold_block",
-            () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.GOLD)
-                    .strength(9.0F, 14.0F).sound(SoundType.METAL).lightLevel(LightUtils.setFixedLight(4))
+    
+    public static final RegistryObject<ErubescentGoldBlock> erubescent_gold_block = BLOCKS.register("erubescent_gold_block",
+            () -> new ErubescentGoldBlock(Block.Properties.of(Material.METAL, MaterialColor.GOLD)
+                    .strength(9.0F, 14.0F).sound(SoundType.METAL)
+                    .lightLevel(LightUtils.setFixedLight(ErubescentGoldBlock.light_level))
                     .harvestTool(ToolType.PICKAXE).harvestLevel(0).requiresCorrectToolForDrops()
                     .isRedstoneConductor(PropertyUtils::never))); 
+    
+    // TODO change registered class when coded
     public static final RegistryObject<Block> scarlatite_gold_block = BLOCKS.register("scarlatite_gold_block",
             () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.TERRACOTTA_ORANGE)
                     .strength(11.0F, 18.0F).sound(SoundType.METAL).lightLevel(LightUtils.setFixedLight(15))
