@@ -3,8 +3,10 @@ package mod.akkamaddi.goldenglitter.content;
 import java.util.Random;
 
 import mod.akkamaddi.goldenglitter.config.GoldenConfig;
+import mod.alexndr.simplecorelib.client.ClientUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.RedstoneBlock;
+import net.minecraft.particles.RedstoneParticleData;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -32,6 +34,8 @@ public class ErubescentGoldBlock extends RedstoneBlock
         if (worldIn.isClientSide && GoldenConfig.makeErubescentSparkle) 
         {
             super.animateTick(stateIn, worldIn, pos, rand);
+            double pv[] = ClientUtils.findBlockParticleVector(pos, rand, 0.3F, 1.6F);
+            worldIn.addParticle(RedstoneParticleData.REDSTONE, pv[0], pv[1], pv[2], pv[3], pv[4], pv[5]);
         }
     } // end animateTick
 

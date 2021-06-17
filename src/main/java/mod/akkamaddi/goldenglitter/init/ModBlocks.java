@@ -2,7 +2,9 @@ package mod.akkamaddi.goldenglitter.init;
 
 import mod.akkamaddi.goldenglitter.GoldenGlitter;
 import mod.akkamaddi.goldenglitter.content.ErubescentGoldBlock;
+import mod.akkamaddi.goldenglitter.content.HephaestanGoldBlock;
 import mod.akkamaddi.goldenglitter.content.RoseGoldBlock;
+import mod.akkamaddi.goldenglitter.content.ScarlatiteGoldBlock;
 import mod.alexndr.simplecorelib.helpers.LightUtils;
 import mod.alexndr.simplecorelib.helpers.PropertyUtils;
 import net.minecraft.block.Block;
@@ -38,16 +40,17 @@ public final class ModBlocks
                     .lightLevel(LightUtils.setFixedLight(ErubescentGoldBlock.light_level))
                     .harvestTool(ToolType.PICKAXE).harvestLevel(0).requiresCorrectToolForDrops()
                     .isRedstoneConductor(PropertyUtils::never))); 
-    
-    // TODO change registered class when coded
-    public static final RegistryObject<Block> scarlatite_gold_block = BLOCKS.register("scarlatite_gold_block",
-            () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.TERRACOTTA_ORANGE)
-                    .strength(11.0F, 18.0F).sound(SoundType.METAL).lightLevel(LightUtils.setFixedLight(15))
+    public static final RegistryObject<ScarlatiteGoldBlock> scarlatite_gold_block = BLOCKS.register("scarlatite_gold_block",
+            () -> new ScarlatiteGoldBlock(Block.Properties.of(Material.METAL, MaterialColor.TERRACOTTA_ORANGE)
+                    .strength(11.0F, 18.0F).sound(SoundType.METAL)
+                    .lightLevel(LightUtils.setFixedLight(ScarlatiteGoldBlock.light_level))
                     .harvestTool(ToolType.PICKAXE).harvestLevel(0).requiresCorrectToolForDrops()
                     .isRedstoneConductor(PropertyUtils::never))); 
-    public static final RegistryObject<Block> hephaestan_gold_block = BLOCKS.register("hephaestan_gold_block",
-            () -> new Block(Block.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE)
+    
+    public static final RegistryObject<HephaestanGoldBlock> hephaestan_gold_block = BLOCKS.register("hephaestan_gold_block",
+            () -> new HephaestanGoldBlock(Block.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE)
                     .strength(18.0F, 24.0F).sound(SoundType.METAL)
+                    .lightLevel(LightUtils.setFixedLight(HephaestanGoldBlock.light_level))
                     .harvestTool(ToolType.PICKAXE).harvestLevel(0).requiresCorrectToolForDrops()
                     .isRedstoneConductor(PropertyUtils::never))); 
 } // end class
