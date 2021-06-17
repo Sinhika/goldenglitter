@@ -54,18 +54,18 @@ Four gold alloys, plus a self-powered rail.
 [[dependencies.goldenglitter]]
     modId="simplecorelib"
     mandatory=true
-    versionRange="[2.0.8.4,2.0.9.0)"
+    versionRange="[1.16.5-2.0.8.4, 1.16.5-2.0.9.0)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.goldenglitter]]
     modId="simpleores"
     mandatory=true
-    versionRange="[2.4.7.0,2.4.8.0)"
+    versionRange="[[1.16.5-2.4.7.0, 1.16.5-2.4.8.0)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.goldenglitter]]
     modId="fusion"
     mandatory=true
-    versionRange="[2.7.4.0,2.7.5.0)"
+    versionRange="[[1.16.5-2.7.4.1, 1.16.5-2.7.5.0)"
     ordering="NONE"
     side="BOTH"

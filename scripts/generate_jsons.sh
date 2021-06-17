@@ -63,6 +63,7 @@ gen_model_jsons.py --type=tool --item_only erubescent_gold_shovel
 gen_model_jsons.py --type=tool --item_only erubescent_gold_axe
 gen_model_jsons.py --type=tool --item_only erubescent_gold_pickaxe
 
+gen_model_jsons.py --type=tool --item_only scarlatite_gold_sword
 gen_model_jsons.py --type=tool --item_only scarlatite_gold_shovel 
 gen_model_jsons.py --type=tool --item_only scarlatite_gold_axe
 gen_model_jsons.py --type=tool --item_only scarlatite_gold_pickaxe

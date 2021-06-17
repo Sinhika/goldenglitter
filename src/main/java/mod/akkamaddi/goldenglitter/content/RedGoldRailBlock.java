@@ -6,7 +6,6 @@ import mod.akkamaddi.goldenglitter.config.GoldenConfig;
 import mod.alexndr.simplecorelib.client.ClientUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.RailBlock;
-import net.minecraft.particles.ParticleTypes;
 import net.minecraft.particles.RedstoneParticleData;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;

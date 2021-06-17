@@ -9,7 +9,6 @@ import mod.akkamaddi.goldenglitter.content.ScarlatiteGoldBlock;
 import mod.alexndr.simplecorelib.helpers.LightUtils;
 import mod.alexndr.simplecorelib.helpers.PropertyUtils;
 import net.minecraft.block.Block;
-import net.minecraft.block.RailBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;

@@ -3,7 +3,6 @@ package mod.akkamaddi.goldenglitter.content;
 import java.util.Random;
 
 import mod.akkamaddi.goldenglitter.config.GoldenConfig;
-import mod.alexndr.simplecorelib.client.ClientUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.RedstoneBlock;
 import net.minecraft.particles.ParticleTypes;
