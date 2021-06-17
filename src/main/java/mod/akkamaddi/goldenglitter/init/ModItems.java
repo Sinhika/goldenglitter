@@ -3,6 +3,7 @@ package mod.akkamaddi.goldenglitter.init;
 import mod.akkamaddi.goldenglitter.GoldenGlitter;
 import mod.akkamaddi.goldenglitter.content.GoldenArmorMaterial;
 import mod.akkamaddi.goldenglitter.content.GoldenItemTier;
+import mod.akkamaddi.goldenglitter.content.HephaestanSwordItem;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.AxeItem;
@@ -111,13 +112,13 @@ public final class ModItems
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
 
     // hephaestan_gold
-    // TODO - replace SwordItem with HephaestanSwordItem when it is written. 
-    public static final RegistryObject<SwordItem> hephaestan_gold_sword = ITEMS.register("hephaestan_gold_sword",
-            () -> new SwordItem(GoldenItemTier.HEPHAESTAN_GOLD, 3, -2.4F,
+    public static final RegistryObject<HephaestanSwordItem> hephaestan_gold_sword = ITEMS.register("hephaestan_gold_sword",
+            () -> new HephaestanSwordItem(GoldenItemTier.HEPHAESTAN_GOLD, 3, -2.4F,
                                 new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<PickaxeItem> hephaestan_gold_pickaxe = ITEMS.register("hephaestan_gold_pickaxe",
             () -> new PickaxeItem(GoldenItemTier.HEPHAESTAN_GOLD, 1, -2.8F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
+    // TODO - should there be a HephaestanAxeItem?
     public static final RegistryObject<AxeItem> hephaestan_gold_axe = ITEMS.register("hephaestan_gold_axe",
             () -> new AxeItem(GoldenItemTier.HEPHAESTAN_GOLD, 7.0F, -3.1F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));

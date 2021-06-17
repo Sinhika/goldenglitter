@@ -3,6 +3,7 @@ package mod.akkamaddi.goldenglitter.init;
 import mod.akkamaddi.goldenglitter.GoldenGlitter;
 import mod.akkamaddi.goldenglitter.content.ErubescentGoldBlock;
 import mod.akkamaddi.goldenglitter.content.HephaestanGoldBlock;
+import mod.akkamaddi.goldenglitter.content.RedGoldRailBlock;
 import mod.akkamaddi.goldenglitter.content.RoseGoldBlock;
 import mod.akkamaddi.goldenglitter.content.ScarlatiteGoldBlock;
 import mod.alexndr.simplecorelib.helpers.LightUtils;
@@ -22,10 +23,10 @@ public final class ModBlocks
     public static final DeferredRegister<Block> BLOCKS = 
             DeferredRegister.create(ForgeRegistries.BLOCKS, GoldenGlitter.MODID);
     
-    // rail - TODO change registered class when coded.
-    public static final RegistryObject<RailBlock> red_gold_rail = BLOCKS.register("red_gold_rail",
-            () -> new RailBlock(Block.Properties.of(Material.DECORATION)
-                    .lightLevel(LightUtils.setFixedLight(15))
+    // rail
+    public static final RegistryObject<RedGoldRailBlock> red_gold_rail = BLOCKS.register("red_gold_rail",
+            () -> new RedGoldRailBlock(Block.Properties.of(Material.DECORATION)
+                    .lightLevel(LightUtils.setFixedLight(RedGoldRailBlock.light_level))
                     .strength(0.7F).noCollission().sound(SoundType.METAL))); 
             
     // storage blocks
