@@ -27,6 +27,7 @@ public class GoldenDataGenerator
         DataGenerator gen = event.getGenerator();
         if (event.includeServer())
         {
+            gen.addProvider(new ModBlockTags(gen, event.getExistingFileHelper()));
         }
     } // end gatherData()
 } // end class

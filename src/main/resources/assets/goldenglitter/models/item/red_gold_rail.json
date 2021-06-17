@@ -1,3 +1,6 @@
 {
-    "parent": "goldenglitter:block/red_gold_rail"
+"parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "goldenglitter:block/red_gold_rail"
+  }
 }
