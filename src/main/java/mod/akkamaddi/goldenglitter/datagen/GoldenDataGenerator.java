@@ -27,12 +27,12 @@ public class GoldenDataGenerator
         DataGenerator gen = event.getGenerator();
         if (event.includeServer())
         {
-//            gen.addProvider(new Recipes(gen));
+            gen.addProvider(new Recipes(gen));
 //            gen.addProvider(new FusionRecipes(gen));
             gen.addProvider(new ModItemTags(gen, event.getExistingFileHelper()));
             gen.addProvider(new ModBlockTags(gen, event.getExistingFileHelper()));
             gen.addProvider(new GoldenLootTableProvider(gen));
-//            gen.addProvider(new GoldenLootInjectorProvider(gen));
+            gen.addProvider(new GoldenLootInjectorProvider(gen));
         }
     } // end gatherData()
 } // end class
