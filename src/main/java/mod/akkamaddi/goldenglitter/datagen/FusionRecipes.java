@@ -19,6 +19,7 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.fluids.capability.templates.FluidHandlerItemStack;
 
 public class FusionRecipes extends AbstractFusionRecipeProvider implements IConditionBuilder, ISimpleConditionBuilder
 {
@@ -51,7 +52,7 @@ public class FusionRecipes extends AbstractFusionRecipeProvider implements ICond
         primary_inputs.add(Ingredient.of(Items.GOLD_NUGGET));
         catalysts[0] = null;
         catalysts[1] = null;
-        catalysts[2] = Ingredient.of(Items.BONE_MEAL);
+        catalysts[2] = Ingredient.of(Items.RED_DYE);
         
         fusionbuilder.buildBasicAlloyRecipes(consumer, primary_inputs, catalysts, 
                 null, null, ModItems.large_rose_gold_chunk.get(),
