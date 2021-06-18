@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:ingots/rose_gold",
+    "#forge:ingots/erubescent_gold",
+    "#forge:ingots/scarlatite_gold",
+    "#forge:ingots/hephaestan_gold"
+  ]
+}

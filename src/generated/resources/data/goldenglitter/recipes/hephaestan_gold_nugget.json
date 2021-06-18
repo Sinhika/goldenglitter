@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "goldenglitter:hephaestan_gold_ingot"
+    }
+  ],
+  "result": {
+    "item": "goldenglitter:hephaestan_gold_nugget",
+    "count": 9
+  }
+}

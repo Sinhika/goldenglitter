@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": [
+    {
+      "item": "goldenglitter:hephaestan_gold_axe"
+    },
+    {
+      "item": "goldenglitter:hephaestan_gold_pickaxe"
+    },
+    {
+      "item": "goldenglitter:hephaestan_gold_shovel"
+    },
+    {
+      "item": "goldenglitter:hephaestan_gold_sword"
+    }
+  ],
+  "result": "goldenglitter:hephaestan_gold_nugget",
+  "experience": 9.0,
+  "cookingtime": 100
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "goldenglitter:large_scarlatite_gold_chunk"
+    }
+  ],
+  "result": {
+    "item": "goldenglitter:scarlatite_gold_nugget",
+    "count": 8
+  }
+}

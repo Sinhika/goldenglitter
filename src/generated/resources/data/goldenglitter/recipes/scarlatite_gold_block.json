@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "goldenglitter:scarlatite_gold_ingot"
+    }
+  },
+  "result": {
+    "item": "goldenglitter:scarlatite_gold_block"
+  }
+}

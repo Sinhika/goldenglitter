@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "goldenglitter:scarlatite_gold_ingot_from_smelting"
+    ]
+  },
+  "criteria": {
+    "scarlatite_gold_ingot_from_smelting": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "goldenglitter:large_scarlatite_gold_chunk"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "goldenglitter:scarlatite_gold_ingot_from_smelting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "scarlatite_gold_ingot_from_smelting",
+      "has_the_recipe"
+    ]
+  ]
+}

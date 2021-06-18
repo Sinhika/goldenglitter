@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "goldenglitter:hephaestan_gold_nugget_from_smelting"
+    ]
+  },
+  "criteria": {
+    "hephaestan_gold_nugget_from_smelting": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "goldenglitter:hephaestan_gold_axe"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "goldenglitter:hephaestan_gold_nugget_from_smelting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "hephaestan_gold_nugget_from_smelting",
+      "has_the_recipe"
+    ]
+  ]
+}

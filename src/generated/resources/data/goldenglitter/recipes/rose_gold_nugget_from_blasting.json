@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": [
+    {
+      "item": "goldenglitter:rose_gold_axe"
+    },
+    {
+      "item": "goldenglitter:rose_gold_boots"
+    },
+    {
+      "item": "goldenglitter:rose_gold_chestplate"
+    },
+    {
+      "item": "goldenglitter:rose_gold_helmet"
+    },
+    {
+      "item": "goldenglitter:rose_gold_hoe"
+    },
+    {
+      "item": "goldenglitter:rose_gold_leggings"
+    },
+    {
+      "item": "goldenglitter:rose_gold_pickaxe"
+    },
+    {
+      "item": "goldenglitter:rose_gold_shovel"
+    },
+    {
+      "item": "goldenglitter:rose_gold_sword"
+    }
+  ],
+  "result": "goldenglitter:rose_gold_nugget",
+  "experience": 0.8,
+  "cookingtime": 100
+}

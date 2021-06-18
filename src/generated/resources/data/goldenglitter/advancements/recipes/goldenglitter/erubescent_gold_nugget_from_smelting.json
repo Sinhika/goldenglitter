@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "goldenglitter:erubescent_gold_nugget_from_smelting"
+    ]
+  },
+  "criteria": {
+    "erubescent_gold_nugget_from_smelting": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "goldenglitter:erubescent_gold_axe"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "goldenglitter:erubescent_gold_nugget_from_smelting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "erubescent_gold_nugget_from_smelting",
+      "has_the_recipe"
+    ]
+  ]
+}

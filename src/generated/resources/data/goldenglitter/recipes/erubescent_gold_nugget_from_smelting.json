@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": [
+    {
+      "item": "goldenglitter:erubescent_gold_axe"
+    },
+    {
+      "item": "goldenglitter:erubescent_gold_pickaxe"
+    },
+    {
+      "item": "goldenglitter:erubescent_gold_shovel"
+    },
+    {
+      "item": "goldenglitter:erubescent_gold_sword"
+    }
+  ],
+  "result": "goldenglitter:erubescent_gold_nugget",
+  "experience": 3.0,
+  "cookingtime": 200
+}

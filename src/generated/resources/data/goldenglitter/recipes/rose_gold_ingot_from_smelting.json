@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "goldenglitter:large_rose_gold_chunk"
+  },
+  "result": "goldenglitter:rose_gold_ingot",
+  "experience": 0.8,
+  "cookingtime": 200
+}

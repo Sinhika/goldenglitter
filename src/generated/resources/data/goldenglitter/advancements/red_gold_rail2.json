@@ -1,0 +1,37 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "flag": "red_gold_rails",
+          "type": "goldenglitter:flag"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "goldenglitter:red_gold_rail2"
+          ]
+        },
+        "criteria": {
+          "has_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "item": "goldenglitter:scarlatite_gold_ingot"
+                }
+              ]
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_item"
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "red_gold_rails",
+          "type": "goldenglitter:flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "goldenglitter:erubescent_gold_ingot"
+          },
+          {
+            "item": "minecraft:rail"
+          },
+          {
+            "item": "minecraft:rail"
+          },
+          {
+            "item": "minecraft:rail"
+          }
+        ],
+        "result": {
+          "item": "goldenglitter:red_gold_rail",
+          "count": 3
+        }
+      }
+    }
+  ]
+}

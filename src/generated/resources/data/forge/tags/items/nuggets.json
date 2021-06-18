@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:nuggets/rose_gold",
+    "#forge:nuggets/erubescent_gold",
+    "#forge:nuggets/scarlatite_gold",
+    "#forge:nuggets/hephaestan_gold"
+  ]
+}

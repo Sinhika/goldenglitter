@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "goldenglitter:rose_gold_nugget"
+    }
+  },
+  "result": {
+    "item": "goldenglitter:rose_gold_ingot"
+  }
+}

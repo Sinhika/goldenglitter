@@ -1,0 +1,37 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "flag": "erubescent_gold_tools",
+          "type": "goldenglitter:flag"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "goldenglitter:erubescent_gold_shovel"
+          ]
+        },
+        "criteria": {
+          "has_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "item": "goldenglitter:erubescent_gold_ingot"
+                }
+              ]
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_item"
+          ]
+        ]
+      }
+    }
+  ]
+}

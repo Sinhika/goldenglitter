@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "goldenglitter:rose_gold_nugget_from_blasting"
+    ]
+  },
+  "criteria": {
+    "rose_gold_nugget_from_blasting": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "goldenglitter:rose_gold_axe"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "goldenglitter:rose_gold_nugget_from_blasting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "rose_gold_nugget_from_blasting",
+      "has_the_recipe"
+    ]
+  ]
+}
