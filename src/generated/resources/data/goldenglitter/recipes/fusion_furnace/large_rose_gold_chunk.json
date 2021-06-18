@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "rose_gold_making",
+          "type": "goldenglitter:flag"
+        }
+      ],
+      "recipe": {
+        "type": "fusion:alloying",
+        "inputs": [
+          {
+            "tag": "forge:ingots/copper"
+          },
+          {
+            "item": "minecraft:gold_nugget"
+          }
+        ],
+        "catalyst": {
+          "item": "minecraft:red_dye"
+        },
+        "output": {
+          "item": "goldenglitter:large_rose_gold_chunk"
+        },
+        "cookingtime": 600,
+        "experience": 6.0
+      }
+    }
+  ]
+}

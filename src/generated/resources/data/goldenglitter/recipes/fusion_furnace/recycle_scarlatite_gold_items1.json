@@ -1,0 +1,43 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "recycle_golden_glitter",
+          "type": "goldenglitter:flag"
+        }
+      ],
+      "recipe": {
+        "type": "fusion:alloying",
+        "inputs": [
+          [
+            {
+              "item": "goldenglitter:scarlatite_gold_axe"
+            },
+            {
+              "item": "goldenglitter:scarlatite_gold_pickaxe"
+            },
+            {
+              "item": "goldenglitter:scarlatite_gold_shovel"
+            },
+            {
+              "item": "goldenglitter:scarlatite_gold_sword"
+            }
+          ],
+          {
+            "item": "minecraft:gravel"
+          }
+        ],
+        "catalyst": {
+          "tag": "minecraft:coals"
+        },
+        "output": {
+          "item": "goldenglitter:scarlatite_gold_ingot"
+        },
+        "cookingtime": 600,
+        "experience": 20.0
+      }
+    }
+  ]
+}

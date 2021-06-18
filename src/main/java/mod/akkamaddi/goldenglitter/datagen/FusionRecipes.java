@@ -65,7 +65,8 @@ public class FusionRecipes extends AbstractFusionRecipeProvider implements ICond
                 ModItems.rose_gold_shovel.get(), ModItems.rose_gold_sword.get()),
                 Ingredient.of(ModItems.rose_gold_chestplate.get(), ModItems.rose_gold_leggings.get()),
                 Ingredient.of(Blocks.GRAVEL), Ingredient.of(ItemTags.COALS), 
-                ModItems.rose_gold_ingot.get(), 10.0F, 600, flag("recycling_enabled"), "recycle_rose_gold_items");
+                ModItems.rose_gold_ingot.get(), 10.0F, 600, flag("recycle_golden_glitter"), 
+                "recycle_rose_gold_items");
     } // end registerRoseGoldRecipes
 
     /**
@@ -92,7 +93,8 @@ public class FusionRecipes extends AbstractFusionRecipeProvider implements ICond
                 ModItems.erubescent_gold_shovel.get(), ModItems.erubescent_gold_sword.get()),
                 null,
                 Ingredient.of(Blocks.GRAVEL), Ingredient.of(ItemTags.COALS), 
-                ModItems.erubescent_gold_ingot.get(), 7.0F, 600, flag("recycling_enabled"), "recycle_erubescent_gold_items");
+                ModItems.erubescent_gold_ingot.get(), 7.0F, 600, flag("recycle_golden_glitter"), 
+                "recycle_erubescent_gold_items");
     } // end registerErubescentGoldRecipes
     
     /**
@@ -119,7 +121,8 @@ public class FusionRecipes extends AbstractFusionRecipeProvider implements ICond
                 ModItems.scarlatite_gold_shovel.get(), ModItems.scarlatite_gold_sword.get()),
                 null,
                 Ingredient.of(Blocks.GRAVEL), Ingredient.of(ItemTags.COALS), 
-                ModItems.scarlatite_gold_ingot.get(), 20.0F, 600, flag("recycling_enabled"), "recycle_scarlatite_gold_items");
+                ModItems.scarlatite_gold_ingot.get(), 20.0F, 600, flag("recycle_golden_glitter"), 
+                "recycle_scarlatite_gold_items");
     } // end registerScarlatiteGoldRecipes
 
     /**
@@ -145,7 +148,8 @@ public class FusionRecipes extends AbstractFusionRecipeProvider implements ICond
                 ModItems.hephaestan_gold_pickaxe.get(),ModItems.hephaestan_gold_shovel.get(), ModItems.hephaestan_gold_sword.get()),
                 null,
                 Ingredient.of(Blocks.GRAVEL), Ingredient.of(Items.LAVA_BUCKET), 
-                ModItems.hephaestan_gold_ingot.get(), 25.0F, 600, flag("recycling_enabled"), "recycle_hephaestan_gold_items");
+                ModItems.hephaestan_gold_ingot.get(), 25.0F, 600, flag("recycle_golden_glitter"), 
+                "recycle_hephaestan_gold_items");
     } // end registerHephaestanGoldRecipes
 
     

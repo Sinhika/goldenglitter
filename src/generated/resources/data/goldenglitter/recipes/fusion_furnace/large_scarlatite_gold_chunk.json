@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "scarlatite_gold_making",
+          "type": "goldenglitter:flag"
+        }
+      ],
+      "recipe": {
+        "type": "fusion:alloying",
+        "inputs": [
+          {
+            "item": "minecraft:redstone"
+          },
+          {
+            "item": "minecraft:redstone"
+          }
+        ],
+        "catalyst": {
+          "item": "goldenglitter:erubescent_gold_ingot"
+        },
+        "output": {
+          "item": "goldenglitter:large_scarlatite_gold_chunk"
+        },
+        "cookingtime": 600,
+        "experience": 12.0
+      }
+    }
+  ]
+}

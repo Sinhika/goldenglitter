@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "erubescent_gold_making",
+          "type": "goldenglitter:flag"
+        }
+      ],
+      "recipe": {
+        "type": "fusion:alloying",
+        "inputs": [
+          {
+            "item": "minecraft:redstone"
+          },
+          {
+            "item": "minecraft:redstone"
+          }
+        ],
+        "catalyst": {
+          "item": "minecraft:gold_ingot"
+        },
+        "output": {
+          "item": "goldenglitter:large_erubescent_gold_chunk"
+        },
+        "cookingtime": 600,
+        "experience": 12.0
+      }
+    }
+  ]
+}
