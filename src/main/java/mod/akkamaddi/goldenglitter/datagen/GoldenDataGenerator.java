@@ -29,7 +29,7 @@ public class GoldenDataGenerator
         {
 //            gen.addProvider(new Recipes(gen));
 //            gen.addProvider(new FusionRecipes(gen));
-//            gen.addProvider(new ModItemTags(gen, event.getExistingFileHelper()));
+            gen.addProvider(new ModItemTags(gen, event.getExistingFileHelper()));
             gen.addProvider(new ModBlockTags(gen, event.getExistingFileHelper()));
             gen.addProvider(new GoldenLootTableProvider(gen));
 //            gen.addProvider(new GoldenLootInjectorProvider(gen));
