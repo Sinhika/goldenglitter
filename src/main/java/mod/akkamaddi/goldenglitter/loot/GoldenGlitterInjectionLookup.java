@@ -8,7 +8,14 @@ public class GoldenGlitterInjectionLookup extends InjectionTableLookup
 
     public GoldenGlitterInjectionLookup()
     {
-        // TODO Auto-generated constructor stub
+        super();
+        this.put("desert_pyramid", "desert_pyramid");
+        this.put("jungle_temple", "jungle_temple");
+        this.put("buried_treasure", "buried_treasure");
+        this.put("simple_dungeon", "simple_dungeon");
+        this.put("abandoned_mineshaft", "abandoned_mineshaft");
+        AddDungeonAliases();
+        AddOceanAliases();
     }
 
 } // end class
