@@ -171,7 +171,7 @@ jar.finalizedBy('reobfJar')
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'goldenglitter'
+            groupId = 'akkamaddis-golden-glitter'
             artifact jar
         }
     }
