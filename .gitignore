@@ -3,19 +3,17 @@ bin/
 build/
 libs/
 src/generated/resources/.cache/
-gradle/
 .settings/
 .gradle/
 .idea/
 *.launch
 *.log
 *.jar
+!gradle/wrapper/*.jar
 *.class
 .project
 .classpath
 *~
 .*.swp
-gradlew
-gradlew.bat
 build.number
 
