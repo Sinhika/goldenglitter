@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "item": "goldenglitter:scarlatite_gold_nugget"
+            "items": [
+              "goldenglitter:scarlatite_gold_nugget"
+            ]
           }
         ]
       }

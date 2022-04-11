@@ -20,7 +20,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "goldenglitter:rose_gold_ingot"
+                  "items": [
+                    "goldenglitter:rose_gold_ingot"
+                  ]
                 }
               ]
             }

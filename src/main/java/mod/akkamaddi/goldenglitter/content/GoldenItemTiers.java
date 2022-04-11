@@ -36,5 +36,5 @@ public class GoldenItemTiers
             new ResourceLocation(GoldenGlitter.MODID, "scarlatite_gold"), List.of(Tiers.NETHERITE), List.of());
     public static final Tier HEPHAESTAN_GOLD = TierSortingRegistry.registerTier(
             new ForgeTier(7, 222, 28.0F, 5.0F, 30, HEPHAESTAN_GOLD_TAG, ()->Ingredient.of(ModItems.hephaestan_gold_ingot.get())),
-            new ResourceLocation(GoldenGlitter.MODID, "HEPHAESTAN_GOLD"), List.of(SCARLATITE_GOLD), List.of());
+            new ResourceLocation(GoldenGlitter.MODID, "hephaestan_gold"), List.of(SCARLATITE_GOLD), List.of());
 } // end class
