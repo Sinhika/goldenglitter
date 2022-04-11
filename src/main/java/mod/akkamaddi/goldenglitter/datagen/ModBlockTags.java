@@ -3,7 +3,7 @@ package mod.akkamaddi.goldenglitter.datagen;
 import mod.akkamaddi.goldenglitter.GoldenGlitter;
 import mod.akkamaddi.goldenglitter.init.ModBlocks;
 import mod.alexndr.simplecorelib.helpers.TagUtils;
-import net.minecraft.data.BlockTagsProvider;
+import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.data.ExistingFileHelper;

@@ -1,7 +1,7 @@
 package mod.akkamaddi.goldenglitter.init;
 
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 
 import javax.annotation.Nonnull;
 
@@ -12,10 +12,10 @@ import java.util.function.Supplier;
 public final class ModTabGroups
 {
 
-    public static final ItemGroup MOD_ITEM_GROUP = 
+    public static final CreativeModeTab MOD_ITEM_GROUP = 
             new ModTabGroup(GoldenGlitter.MODID, () -> new ItemStack(ModItems.rose_gold_ingot.get()));
 
-    public static final class ModTabGroup extends ItemGroup
+    public static final class ModTabGroup extends CreativeModeTab
     {
 
         @Nonnull

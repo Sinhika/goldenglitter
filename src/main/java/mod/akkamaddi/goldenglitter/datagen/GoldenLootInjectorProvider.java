@@ -12,13 +12,13 @@ import mod.akkamaddi.goldenglitter.init.ModBlocks;
 import mod.akkamaddi.goldenglitter.init.ModItems;
 import mod.alexndr.simplecorelib.datagen.LootTableInjectorProvider;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.loot.ItemLootEntry;
-import net.minecraft.loot.LootParameterSet;
-import net.minecraft.loot.LootPool;
-import net.minecraft.loot.LootTable.Builder;
-import net.minecraft.loot.RandomValueRange;
-import net.minecraft.loot.functions.SetCount;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable.Builder;
+import net.minecraft.world.level.storage.loot.RandomValueBounds;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.resources.ResourceLocation;
 
 public class GoldenLootInjectorProvider extends LootTableInjectorProvider
 {
@@ -29,75 +29,75 @@ public class GoldenLootInjectorProvider extends LootTableInjectorProvider
     }
 
     @Override
-    protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, Builder>>>, LootParameterSet>> getTables()
+    protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, Builder>>>, LootContextParamSet>> getTables()
     {
         tables.clear();
         // buried_treasure
         LootPool.Builder foo = createChestPool(1, 1, 0.25F)
-                .add(ItemLootEntry.lootTableItem(ModItems.rose_gold_ingot.get()).setWeight(10)
-                        .apply(SetCount.setCount(RandomValueRange.between(2, 3))))
-                .add(ItemLootEntry.lootTableItem(ModItems.erubescent_gold_ingot.get()).setWeight(5)
-                    .apply(SetCount.setCount(RandomValueRange.between(1, 3))))
-                .add(ItemLootEntry.lootTableItem(ModItems.scarlatite_gold_ingot.get()).setWeight(2)
-                        .apply(SetCount.setCount(RandomValueRange.between(1, 2))))
-                .add(ItemLootEntry.lootTableItem(ModItems.hephaestan_gold_ingot.get()).setWeight(1)
-                        .apply(SetCount.setCount(RandomValueRange.between(1, 2))));
+                .add(LootItem.lootTableItem(ModItems.rose_gold_ingot.get()).setWeight(10)
+                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(2, 3))))
+                .add(LootItem.lootTableItem(ModItems.erubescent_gold_ingot.get()).setWeight(5)
+                    .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 3))))
+                .add(LootItem.lootTableItem(ModItems.scarlatite_gold_ingot.get()).setWeight(2)
+                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))))
+                .add(LootItem.lootTableItem(ModItems.hephaestan_gold_ingot.get()).setWeight(1)
+                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))));
         addInjectionTable(GoldenGlitter.MODID, "buried_treasure", foo);
         
         // abandoned_mineshaft
         foo = createChestPool(1,1,0.25F)
-                .add(ItemLootEntry.lootTableItem(ModBlocks.red_gold_rail.get()).setWeight(1)
-                        .apply(SetCount.setCount(RandomValueRange.between(1, 2))));
+                .add(LootItem.lootTableItem(ModBlocks.red_gold_rail.get()).setWeight(1)
+                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))));
         addInjectionTable(GoldenGlitter.MODID, "abandoned_mineshaft", foo);
                    
         // simple_dungeon
         foo = createChestPool(1,1,0.25F)
-                .add(ItemLootEntry.lootTableItem(ModItems.rose_gold_nugget.get()).setWeight(10)
-                        .apply(SetCount.setCount(RandomValueRange.between(2, 3))))
-                .add(ItemLootEntry.lootTableItem(ModItems.erubescent_gold_nugget.get()).setWeight(5)
-                    .apply(SetCount.setCount(RandomValueRange.between(1, 3))))
-                .add(ItemLootEntry.lootTableItem(ModItems.scarlatite_gold_nugget.get()).setWeight(2)
-                        .apply(SetCount.setCount(RandomValueRange.between(1, 2))))
-                .add(ItemLootEntry.lootTableItem(ModItems.hephaestan_gold_nugget.get()).setWeight(1)
-                        .apply(SetCount.setCount(RandomValueRange.between(1, 2))));
+                .add(LootItem.lootTableItem(ModItems.rose_gold_nugget.get()).setWeight(10)
+                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(2, 3))))
+                .add(LootItem.lootTableItem(ModItems.erubescent_gold_nugget.get()).setWeight(5)
+                    .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 3))))
+                .add(LootItem.lootTableItem(ModItems.scarlatite_gold_nugget.get()).setWeight(2)
+                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))))
+                .add(LootItem.lootTableItem(ModItems.hephaestan_gold_nugget.get()).setWeight(1)
+                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))));
         addInjectionTable(GoldenGlitter.MODID, "simple_dungeon", foo);
         
         // shipwreck
         foo = createChestPool(1,1,0.25F)
-                .add(ItemLootEntry.lootTableItem(ModItems.rose_gold_ingot.get()).setWeight(10)
-                        .apply(SetCount.setCount(RandomValueRange.between(2, 3))))
-                .add(ItemLootEntry.lootTableItem(ModItems.erubescent_gold_ingot.get()).setWeight(5)
-                    .apply(SetCount.setCount(RandomValueRange.between(1, 3))))
-                .add(ItemLootEntry.lootTableItem(ModItems.scarlatite_gold_ingot.get()).setWeight(2)
-                        .apply(SetCount.setCount(RandomValueRange.between(1, 2))))
-                .add(ItemLootEntry.lootTableItem(ModItems.hephaestan_gold_ingot.get()).setWeight(1)
-                        .apply(SetCount.setCount(RandomValueRange.between(1, 2))));
+                .add(LootItem.lootTableItem(ModItems.rose_gold_ingot.get()).setWeight(10)
+                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(2, 3))))
+                .add(LootItem.lootTableItem(ModItems.erubescent_gold_ingot.get()).setWeight(5)
+                    .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 3))))
+                .add(LootItem.lootTableItem(ModItems.scarlatite_gold_ingot.get()).setWeight(2)
+                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))))
+                .add(LootItem.lootTableItem(ModItems.hephaestan_gold_ingot.get()).setWeight(1)
+                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 2))));
         addInjectionTable(GoldenGlitter.MODID, "shipwreck", foo);
         
         // underwater_ruin
         foo = createChestPool(1,1,0.25F)
-                .add(ItemLootEntry.lootTableItem(ModItems.rose_gold_ingot.get()).setWeight(10)
-                        .apply(SetCount.setCount(RandomValueRange.between(2, 3))))
-                .add(ItemLootEntry.lootTableItem(ModItems.rose_gold_sword.get()).setWeight(1))
-                .add(ItemLootEntry.lootTableItem(ModItems.rose_gold_helmet.get()).setWeight(1));
+                .add(LootItem.lootTableItem(ModItems.rose_gold_ingot.get()).setWeight(10)
+                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(2, 3))))
+                .add(LootItem.lootTableItem(ModItems.rose_gold_sword.get()).setWeight(1))
+                .add(LootItem.lootTableItem(ModItems.rose_gold_helmet.get()).setWeight(1));
         addInjectionTable(GoldenGlitter.MODID, "underwater_ruin", foo);
         
         // desert_pyramid
         foo = createChestPool(1,1,0.25F)
-                .add(ItemLootEntry.lootTableItem(ModItems.rose_gold_ingot.get()).setWeight(10)
-                        .apply(SetCount.setCount(RandomValueRange.between(2, 3))))
-                .add(ItemLootEntry.lootTableItem(ModItems.erubescent_gold_ingot.get()).setWeight(1)
-                    .apply(SetCount.setCount(RandomValueRange.between(1, 3))))
-                .add(ItemLootEntry.lootTableItem(ModItems.rose_gold_helmet.get()).setWeight(1))
-                .add(ItemLootEntry.lootTableItem(ModItems.rose_gold_chestplate.get()).setWeight(1));
+                .add(LootItem.lootTableItem(ModItems.rose_gold_ingot.get()).setWeight(10)
+                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(2, 3))))
+                .add(LootItem.lootTableItem(ModItems.erubescent_gold_ingot.get()).setWeight(1)
+                    .apply(SetItemCountFunction.setCount(RandomValueBounds.between(1, 3))))
+                .add(LootItem.lootTableItem(ModItems.rose_gold_helmet.get()).setWeight(1))
+                .add(LootItem.lootTableItem(ModItems.rose_gold_chestplate.get()).setWeight(1));
         addInjectionTable(GoldenGlitter.MODID, "desert_pyramid", foo);
                 
         // jungle_temple
         foo = createChestPool(1,1,0.25F)
-                .add(ItemLootEntry.lootTableItem(ModItems.rose_gold_ingot.get()).setWeight(10)
-                        .apply(SetCount.setCount(RandomValueRange.between(2, 3))))
-                .add(ItemLootEntry.lootTableItem(ModItems.rose_gold_leggings.get()).setWeight(1))
-                .add(ItemLootEntry.lootTableItem(ModItems.rose_gold_boots.get()).setWeight(1));
+                .add(LootItem.lootTableItem(ModItems.rose_gold_ingot.get()).setWeight(10)
+                        .apply(SetItemCountFunction.setCount(RandomValueBounds.between(2, 3))))
+                .add(LootItem.lootTableItem(ModItems.rose_gold_leggings.get()).setWeight(1))
+                .add(LootItem.lootTableItem(ModItems.rose_gold_boots.get()).setWeight(1));
         addInjectionTable(GoldenGlitter.MODID, "jungle_temple", foo);
         
         return tables;

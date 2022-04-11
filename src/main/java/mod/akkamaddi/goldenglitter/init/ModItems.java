@@ -4,14 +4,14 @@ import mod.akkamaddi.goldenglitter.GoldenGlitter;
 import mod.akkamaddi.goldenglitter.content.GoldenArmorMaterial;
 import mod.akkamaddi.goldenglitter.content.GoldenItemTier;
 import mod.akkamaddi.goldenglitter.content.HephaestanSwordItem;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.PickaxeItem;
-import net.minecraft.item.ShovelItem;
-import net.minecraft.item.SwordItem;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.ShovelItem;
+import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -53,16 +53,16 @@ public final class ModItems
     // ARMORS 
     // rose_gold
     public static final RegistryObject<ArmorItem> rose_gold_helmet = ITEMS.register("rose_gold_helmet",
-            () -> new ArmorItem(GoldenArmorMaterial.ROSE_GOLD, EquipmentSlotType.HEAD,
+            () -> new ArmorItem(GoldenArmorMaterial.ROSE_GOLD, EquipmentSlot.HEAD,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<ArmorItem> rose_gold_chestplate = ITEMS.register("rose_gold_chestplate",
-            () -> new ArmorItem(GoldenArmorMaterial.ROSE_GOLD, EquipmentSlotType.CHEST,
+            () -> new ArmorItem(GoldenArmorMaterial.ROSE_GOLD, EquipmentSlot.CHEST,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<ArmorItem> rose_gold_leggings = ITEMS.register("rose_gold_leggings",
-            () -> new ArmorItem(GoldenArmorMaterial.ROSE_GOLD, EquipmentSlotType.LEGS,
+            () -> new ArmorItem(GoldenArmorMaterial.ROSE_GOLD, EquipmentSlot.LEGS,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<ArmorItem> rose_gold_boots = ITEMS.register("rose_gold_boots",
-            () -> new ArmorItem(GoldenArmorMaterial.ROSE_GOLD, EquipmentSlotType.FEET,
+            () -> new ArmorItem(GoldenArmorMaterial.ROSE_GOLD, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
    
     // TOOLS

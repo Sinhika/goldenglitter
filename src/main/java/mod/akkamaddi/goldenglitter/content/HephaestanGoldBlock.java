@@ -3,16 +3,18 @@ package mod.akkamaddi.goldenglitter.content;
 import java.util.Random;
 
 import mod.akkamaddi.goldenglitter.config.GoldenConfig;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.RedstoneBlock;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.particles.RedstoneParticleData;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.PoweredBlock;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.core.Direction;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 
-public class HephaestanGoldBlock extends RedstoneBlock
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+
+public class HephaestanGoldBlock extends PoweredBlock
 {
     private static final int signal_strength = 5;
     public static final int light_level = 4;
@@ -23,13 +25,13 @@ public class HephaestanGoldBlock extends RedstoneBlock
     }
     
     @Override
-    public int getSignal(BlockState p_180656_1_, IBlockReader p_180656_2_, BlockPos p_180656_3_, Direction p_180656_4_)
+    public int getSignal(BlockState p_180656_1_, BlockGetter p_180656_2_, BlockPos p_180656_3_, Direction p_180656_4_)
     {
         return HephaestanGoldBlock.signal_strength;
     }
 
     @Override
-    public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand)
+    public void animateTick(BlockState stateIn, Level worldIn, BlockPos pos, Random rand)
     {
         if (worldIn.isClientSide && GoldenConfig.makeHephaestanSparkle) 
         {
@@ -49,7 +51,7 @@ public class HephaestanGoldBlock extends RedstoneBlock
             pv[4] = 0.0D;
             pv[5] = 0.0D;
 
-            worldIn.addParticle(RedstoneParticleData.REDSTONE, pv[0], pv[1], pv[2], pv[3], pv[4], pv[5]);
+            worldIn.addParticle(DustParticleOptions.REDSTONE, pv[0], pv[1], pv[2], pv[3], pv[4], pv[5]);
             worldIn.addParticle(ParticleTypes.FLAME, (f1 + 0.3) + (f6 * 0.7), 
                     (f2 + 0.3) + (f4 * 0.7), (f3 + 0.3) + (f5 * 0.7), pv[3], pv[4], pv[5]);
         }

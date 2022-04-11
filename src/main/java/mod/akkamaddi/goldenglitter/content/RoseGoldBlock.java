@@ -4,11 +4,13 @@ import java.util.Random;
 
 import mod.akkamaddi.goldenglitter.config.GoldenConfig;
 import mod.alexndr.simplecorelib.client.ClientUtils;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;
+
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 
 public class RoseGoldBlock extends Block
 {
@@ -18,7 +20,7 @@ public class RoseGoldBlock extends Block
     }
 
     @Override
-    public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand)
+    public void animateTick(BlockState stateIn, Level worldIn, BlockPos pos, Random rand)
     {
         if (worldIn.isClientSide && GoldenConfig.makeRoseHideous) 
         {

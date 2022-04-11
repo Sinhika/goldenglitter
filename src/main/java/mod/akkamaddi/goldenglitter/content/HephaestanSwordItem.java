@@ -1,15 +1,17 @@
 package mod.akkamaddi.goldenglitter.content;
 
 import mod.akkamaddi.goldenglitter.helpers.HephaestanHandler;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SwordItem;
+
+import net.minecraft.world.item.Item.Properties;
 
 public class HephaestanSwordItem extends SwordItem
 {
 
-    public HephaestanSwordItem(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder)
+    public HephaestanSwordItem(Tier tier, int attackDamageIn, float attackSpeedIn, Properties builder)
     {
         super(tier, attackDamageIn, attackSpeedIn, builder);
     }

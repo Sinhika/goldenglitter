@@ -3,11 +3,11 @@ package mod.akkamaddi.goldenglitter.content;
 import java.util.function.Supplier;
 
 import mod.akkamaddi.goldenglitter.init.ModItems;
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.LazyValue;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.util.LazyLoadedValue;
 
-public enum GoldenItemTier implements IItemTier 
+public enum GoldenItemTier implements Tier 
 {
     ROSE_GOLD(1, 240, 9.0F, 1.0F, 14, ()-> { return Ingredient.of(ModItems.rose_gold_ingot.get());}),
     ERUBESCENT_GOLD(3, 18, 16.0F, 3.0F, 22, ()-> { return Ingredient.of(ModItems.erubescent_gold_ingot.get());}),
@@ -19,7 +19,7 @@ public enum GoldenItemTier implements IItemTier
     private final float efficiency;
     private final float attackDamage;
     private final int enchantability;
-    private final LazyValue<Ingredient> repairMaterial;
+    private final LazyLoadedValue<Ingredient> repairMaterial;
     
     private GoldenItemTier(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability,
             Supplier<Ingredient> repairMaterial)
@@ -29,7 +29,7 @@ public enum GoldenItemTier implements IItemTier
         this.efficiency = efficiency;
         this.attackDamage = attackDamage;
         this.enchantability = enchantability;
-        this.repairMaterial = new LazyValue<>(repairMaterial);
+        this.repairMaterial = new LazyLoadedValue<>(repairMaterial);
     }
 
     @Override
