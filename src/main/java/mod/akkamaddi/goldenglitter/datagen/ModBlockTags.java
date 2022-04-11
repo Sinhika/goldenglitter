@@ -1,14 +1,18 @@
 package mod.akkamaddi.goldenglitter.datagen;
 
+import java.util.List;
+
 import mod.akkamaddi.goldenglitter.GoldenGlitter;
 import mod.akkamaddi.goldenglitter.init.ModBlocks;
+import mod.alexndr.simplecorelib.datagen.MiningBlockTags;
 import mod.alexndr.simplecorelib.helpers.TagUtils;
-import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
 
-public class ModBlockTags extends BlockTagsProvider
+public class ModBlockTags extends MiningBlockTags
 {
     public ModBlockTags(DataGenerator generatorIn, ExistingFileHelper existingFileHelper)
     {
@@ -18,11 +22,30 @@ public class ModBlockTags extends BlockTagsProvider
     @Override
     protected void addTags()
     {
+        super.addTags();
         registerStorageBlockTags();
         registerBeaconBlockTags();
         registerRailTags();
     } // end registerTags()
  
+    
+    
+    @Override
+    protected void registerMiningTags()
+    {
+        // all the registered blocks are mineable.
+        List<Block> mineables = ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get).toList();
+
+        // do nothing; super() generates all the vanilla blocktags, and we don't want that.
+        // note: all the mineable blocks are iron-level.
+        registerMineableTags(mineables, 
+                List.of(), // 1 stone
+                List.of(ModBlocks.erubescent_gold_block.get(), ModBlocks.hephaestan_gold_block.get(), 
+                        ModBlocks.rose_gold_block.get(), ModBlocks.scarlatite_gold_block.get()), // 2 - iron
+                List.of(), // 3 - diamond
+                List.of()); // 4 - netherite
+    }
+
     /**
      * Create standard forge tags for storage blocks.
      */

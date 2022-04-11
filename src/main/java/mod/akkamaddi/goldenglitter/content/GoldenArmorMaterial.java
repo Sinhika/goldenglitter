@@ -2,13 +2,13 @@ package mod.akkamaddi.goldenglitter.content;
 
 import java.util.function.Supplier;
 
+import mod.akkamaddi.goldenglitter.init.ModItems;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.util.LazyLoadedValue;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import mod.akkamaddi.goldenglitter.init.ModItems;
+import net.minecraftforge.common.util.Lazy;
 
 public enum GoldenArmorMaterial implements ArmorMaterial 
 {
@@ -22,7 +22,7 @@ public enum GoldenArmorMaterial implements ArmorMaterial
     private final int enchantability;
     private final SoundEvent soundEvent;
     private final float toughness;
-    private final LazyLoadedValue<Ingredient> repairMaterial;
+    private final Lazy<Ingredient> repairMaterial;
     private final float knockbackResist;
     
     private GoldenArmorMaterial(String name, int maxDamageFactor, int[] damageReductionAmountArray, int enchantability,
@@ -34,7 +34,7 @@ public enum GoldenArmorMaterial implements ArmorMaterial
         this.enchantability = enchantability;
         this.soundEvent = soundEvent;
         this.toughness = toughness;
-        this.repairMaterial = new LazyLoadedValue<>(repairMaterial);
+        this.repairMaterial = Lazy.of(repairMaterial);
         this.knockbackResist = knockbackResist;
     }
 

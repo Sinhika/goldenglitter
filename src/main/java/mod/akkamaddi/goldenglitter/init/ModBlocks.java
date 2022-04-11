@@ -12,10 +12,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
-import net.minecraftforge.common.ToolType;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public final class ModBlocks
 {
@@ -31,26 +30,26 @@ public final class ModBlocks
     // storage blocks
     public static final RegistryObject<RoseGoldBlock> rose_gold_block = BLOCKS.register("rose_gold_block",
             () -> new RoseGoldBlock(Block.Properties.of(Material.METAL, MaterialColor.COLOR_PINK)
-                    .strength(7.0F, 16.0F).sound(SoundType.METAL)
-                    .harvestTool(ToolType.PICKAXE).harvestLevel(0).requiresCorrectToolForDrops())); 
+                    .strength(7.0F, 16.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+                    // .harvestTool(ToolType.PICKAXE).harvestLevel(0) 
     
     public static final RegistryObject<ErubescentGoldBlock> erubescent_gold_block = BLOCKS.register("erubescent_gold_block",
             () -> new ErubescentGoldBlock(Block.Properties.of(Material.METAL, MaterialColor.GOLD)
                     .strength(9.0F, 14.0F).sound(SoundType.METAL)
-                    .lightLevel(LightUtils.setFixedLight(ErubescentGoldBlock.light_level))
-                    .harvestTool(ToolType.PICKAXE).harvestLevel(0).requiresCorrectToolForDrops()
-                    .isRedstoneConductor(PropertyUtils::never))); 
+                    .lightLevel(LightUtils.setFixedLight(ErubescentGoldBlock.light_level)).requiresCorrectToolForDrops()
+                    .isRedstoneConductor(PropertyUtils::never)));
+                    // .harvestTool(ToolType.PICKAXE).harvestLevel(0) 
     public static final RegistryObject<ScarlatiteGoldBlock> scarlatite_gold_block = BLOCKS.register("scarlatite_gold_block",
             () -> new ScarlatiteGoldBlock(Block.Properties.of(Material.METAL, MaterialColor.TERRACOTTA_ORANGE)
                     .strength(11.0F, 18.0F).sound(SoundType.METAL)
-                    .lightLevel(LightUtils.setFixedLight(ScarlatiteGoldBlock.light_level))
-                    .harvestTool(ToolType.PICKAXE).harvestLevel(0).requiresCorrectToolForDrops()
+                    .lightLevel(LightUtils.setFixedLight(ScarlatiteGoldBlock.light_level)).requiresCorrectToolForDrops()
                     .isRedstoneConductor(PropertyUtils::never))); 
+                    // .harvestTool(ToolType.PICKAXE).harvestLevel(0)
     
     public static final RegistryObject<HephaestanGoldBlock> hephaestan_gold_block = BLOCKS.register("hephaestan_gold_block",
             () -> new HephaestanGoldBlock(Block.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE)
                     .strength(18.0F, 24.0F).sound(SoundType.METAL)
-                    .lightLevel(LightUtils.setFixedLight(HephaestanGoldBlock.light_level))
-                    .harvestTool(ToolType.PICKAXE).harvestLevel(0).requiresCorrectToolForDrops()
+                    .lightLevel(LightUtils.setFixedLight(HephaestanGoldBlock.light_level)).requiresCorrectToolForDrops()
                     .isRedstoneConductor(PropertyUtils::never))); 
+                    // .harvestTool(ToolType.PICKAXE).harvestLevel(0)
 } // end class
