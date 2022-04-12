@@ -50,12 +50,12 @@ Four gold alloys, plus a self-powered rail.
     versionRange="[1.18.1-4.0.1.0,)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.goldenglitter]]
-    modId="simpleores"
-    mandatory=true
-    versionRange="[[1.18.1-4.0.0.3,)"
-    ordering="NONE"
-    side="BOTH"
+#[[dependencies.goldenglitter]]
+#    modId="simpleores"
+#    mandatory=true
+#    versionRange="[[1.18.1-4.0.0.3,)"
+#    ordering="NONE"
+#    side="BOTH"
 [[dependencies.goldenglitter]]
     modId="fusion"
     mandatory=true
