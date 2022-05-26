@@ -8,7 +8,7 @@ import mod.akkamaddi.goldenglitter.config.ConfigHolder;
 import mod.akkamaddi.goldenglitter.config.GoldenConfig;
 import mod.akkamaddi.goldenglitter.init.ModBlocks;
 import mod.akkamaddi.goldenglitter.init.ModTabGroups;
-import mod.alexndr.simplecorelib.config.FlagCondition;
+import mod.alexndr.simplecorelib.api.config.FlagCondition;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;

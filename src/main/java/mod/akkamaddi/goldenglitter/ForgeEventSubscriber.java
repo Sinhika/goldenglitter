@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import mod.akkamaddi.goldenglitter.config.GoldenConfig;
 import mod.akkamaddi.goldenglitter.loot.GoldenGlitterInjectionLookup;
-import mod.alexndr.simplecorelib.helpers.LootUtils;
+import mod.alexndr.simplecorelib.api.helpers.LootUtils;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

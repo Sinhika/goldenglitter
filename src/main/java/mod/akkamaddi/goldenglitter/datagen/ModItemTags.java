@@ -3,8 +3,8 @@ package mod.akkamaddi.goldenglitter.datagen;
 import mod.akkamaddi.goldenglitter.GoldenGlitter;
 import mod.akkamaddi.goldenglitter.init.ModBlocks;
 import mod.akkamaddi.goldenglitter.init.ModItems;
-import mod.alexndr.simplecorelib.datagen.MiningItemTags;
-import mod.alexndr.simplecorelib.helpers.TagUtils;
+import mod.alexndr.simplecorelib.api.datagen.MiningItemTags;
+import mod.alexndr.simplecorelib.api.helpers.TagUtils;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 

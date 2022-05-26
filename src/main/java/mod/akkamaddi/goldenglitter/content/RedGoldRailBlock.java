@@ -3,7 +3,7 @@ package mod.akkamaddi.goldenglitter.content;
 import java.util.Random;
 
 import mod.akkamaddi.goldenglitter.config.GoldenConfig;
-import mod.alexndr.simplecorelib.client.ClientUtils;
+import mod.alexndr.simplecorelib.api.client.ClientUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.DustParticleOptions;
@@ -22,11 +22,13 @@ public class RedGoldRailBlock extends RailBlock
         super(properties);
     }
     
+    @Override
     public boolean isSignalSource(BlockState p_149744_1_) {
         return true;
      }
 
-     public int getSignal(BlockState p_180656_1_, BlockGetter p_180656_2_, BlockPos p_180656_3_, Direction p_180656_4_) {
+     @Override
+    public int getSignal(BlockState p_180656_1_, BlockGetter p_180656_2_, BlockPos p_180656_3_, Direction p_180656_4_) {
         return RedGoldRailBlock.signal_strength;
      }
 

@@ -3,7 +3,7 @@ package mod.akkamaddi.goldenglitter.content;
 import java.util.Random;
 
 import mod.akkamaddi.goldenglitter.config.GoldenConfig;
-import mod.alexndr.simplecorelib.client.ClientUtils;
+import mod.alexndr.simplecorelib.api.client.ClientUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.level.Level;

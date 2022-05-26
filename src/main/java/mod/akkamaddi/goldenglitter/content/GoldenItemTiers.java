@@ -6,7 +6,7 @@ import mod.akkamaddi.goldenglitter.GoldenGlitter;
 import mod.akkamaddi.goldenglitter.init.ModItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.Tag;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -16,14 +16,14 @@ import net.minecraftforge.common.TierSortingRegistry;
 
 public class GoldenItemTiers 
 {
-    public static final Tag.Named<Block> ROSE_GOLD_TAG =
-            BlockTags.createOptional(new ResourceLocation(GoldenGlitter.MODID, "needs_rose_gold_tool"));
-    public static final Tag.Named<Block> ERUBESCENT_GOLD_TAG =
-            BlockTags.createOptional(new ResourceLocation(GoldenGlitter.MODID, "needs_erubescent_gold_tool"));
-    public static final Tag.Named<Block> SCARLATITE_GOLD_TAG =
-            BlockTags.createOptional(new ResourceLocation(GoldenGlitter.MODID, "needs_scarlatite_gold_tool"));
-    public static final Tag.Named<Block> HEPHAESTAN_GOLD_TAG =
-            BlockTags.createOptional(new ResourceLocation(GoldenGlitter.MODID, "needs_hephaestan_gold_tool"));
+    public static final TagKey<Block> ROSE_GOLD_TAG =
+            BlockTags.create(new ResourceLocation(GoldenGlitter.MODID, "needs_rose_gold_tool"));
+    public static final TagKey<Block> ERUBESCENT_GOLD_TAG =
+            BlockTags.create(new ResourceLocation(GoldenGlitter.MODID, "needs_erubescent_gold_tool"));
+    public static final TagKey<Block> SCARLATITE_GOLD_TAG =
+            BlockTags.create(new ResourceLocation(GoldenGlitter.MODID, "needs_scarlatite_gold_tool"));
+    public static final TagKey<Block> HEPHAESTAN_GOLD_TAG =
+            BlockTags.create(new ResourceLocation(GoldenGlitter.MODID, "needs_hephaestan_gold_tool"));
     
     public static final Tier ROSE_GOLD = TierSortingRegistry.registerTier(
             new ForgeTier(Tiers.STONE.getLevel(), 240, 9.0F, 1.0F, 14, ROSE_GOLD_TAG, ()->Ingredient.of(ModItems.rose_gold_ingot.get())),

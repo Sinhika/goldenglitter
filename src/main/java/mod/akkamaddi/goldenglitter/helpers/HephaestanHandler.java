@@ -1,6 +1,6 @@
 package mod.akkamaddi.goldenglitter.helpers;
 
-import mod.alexndr.simplecorelib.helpers.IWeaponEffectHelper;
+import mod.alexndr.simplecorelib.api.helpers.IWeaponEffectHelper;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 
