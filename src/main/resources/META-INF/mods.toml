@@ -1,12 +1,12 @@
 # The name of the mod loader type to load - for regular FML @Mod mods it should be javafml
 modLoader="javafml"
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
-loaderVersion="[39,)" 
+loaderVersion="[40,)" 
 # The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
 license="LGPL 3.0"
 # A URL to refer people to when problems occur with this mod
-#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
+issueTrackerURL="https://github.com/Sinhika/goldenglitter/issues"
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]]
 # The modid of the mod
@@ -16,15 +16,15 @@ version="${file.jarVersion}"
  # A display name for the mod
 displayName="akkamaddi's Golden Glitter"
 # A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
-#updateJSONURL="https://change.me.example.invalid/updates.json" #optional
+updateJSONURL="https://raw.githubusercontent.com/Sinhika/goldenglitter/1.18/update.json" 
 # A URL for the "homepage" for this mod, displayed in the mod UI
-#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
+displayURL="https://www.curseforge.com/minecraft/mc-mods/akkamaddis-golden-glitter"
 # A file name (in the root of the mod JAR) containing a logo for display
 #logoFile="examplemod.png" #optional
 # A text field displayed in the mod UI
 credits="Created by akkamaddi, reliant on AleXndrTheGr8st, maintained by Sinhika"
 # A text field displayed in the mod UI
-authors="akkamaddi, Sinhika" #optional
+authors="akkamaddi, Sinhika" 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
 Four gold alloys, plus a self-powered rail.
@@ -34,20 +34,20 @@ Four gold alloys, plus a self-powered rail.
     # the modid of the dependency
     modId="forge" #mandatory
     mandatory=true #mandatory
-    versionRange="[39,)" #mandatory
+    versionRange="[40,)" #mandatory
     ordering="NONE"
     side="BOTH"
 # Here's another dependency
 [[dependencies.goldenglitter]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.1,1.18.2)"
+    versionRange="[1.18.2,1.19)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.goldenglitter]]
     modId="simplecorelib"
     mandatory=true
-    versionRange="[1.18.1-4.0.1.0,)"
+    versionRange="[1.18.2-4.3.1.0,1.18.2-4.4.0.0)"
     ordering="NONE"
     side="BOTH"
 #[[dependencies.goldenglitter]]
@@ -59,6 +59,6 @@ Four gold alloys, plus a self-powered rail.
 [[dependencies.goldenglitter]]
     modId="fusion"
     mandatory=true
-    versionRange="[[1.18.1-4.0.1.0, )"
+    versionRange="[[1.18.2-4.1.1.0,1.18.2-4.2.0.0)"
     ordering="NONE"
     side="BOTH"
