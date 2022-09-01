@@ -7,7 +7,7 @@ import mod.akkamaddi.goldenglitter.GoldenGlitter;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
+import net.minecraftforge.data.event.GatherDataEvent;
 
 /**
  * bundles up the GatherDataEvent handler and all the necessary data providers for
