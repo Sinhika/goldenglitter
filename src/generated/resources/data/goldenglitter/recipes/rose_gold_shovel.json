@@ -4,17 +4,12 @@
     {
       "conditions": [
         {
-          "flag": "rose_gold_tools",
-          "type": "goldenglitter:flag"
+          "type": "goldenglitter:flag",
+          "flag": "rose_gold_tools"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          " S ",
-          " T ",
-          " T "
-        ],
         "key": {
           "S": {
             "item": "goldenglitter:rose_gold_ingot"
@@ -23,6 +18,11 @@
             "tag": "forge:rods/wooden"
           }
         },
+        "pattern": [
+          " S ",
+          " T ",
+          " T "
+        ],
         "result": {
           "item": "goldenglitter:rose_gold_shovel"
         }

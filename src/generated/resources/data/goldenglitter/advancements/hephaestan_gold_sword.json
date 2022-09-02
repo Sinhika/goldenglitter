@@ -1,22 +1,10 @@
 {
   "advancements": [
     {
-      "conditions": [
-        {
-          "flag": "hephaestan_gold_tools",
-          "type": "goldenglitter:flag"
-        }
-      ],
       "advancement": {
         "parent": "minecraft:recipes/root",
-        "rewards": {
-          "recipes": [
-            "goldenglitter:hephaestan_gold_sword"
-          ]
-        },
         "criteria": {
           "has_item": {
-            "trigger": "minecraft:inventory_changed",
             "conditions": {
               "items": [
                 {
@@ -25,15 +13,27 @@
                   ]
                 }
               ]
-            }
+            },
+            "trigger": "minecraft:inventory_changed"
           }
         },
         "requirements": [
           [
             "has_item"
           ]
-        ]
-      }
+        ],
+        "rewards": {
+          "recipes": [
+            "goldenglitter:hephaestan_gold_sword"
+          ]
+        }
+      },
+      "conditions": [
+        {
+          "type": "goldenglitter:flag",
+          "flag": "hephaestan_gold_tools"
+        }
+      ]
     }
   ]
 }

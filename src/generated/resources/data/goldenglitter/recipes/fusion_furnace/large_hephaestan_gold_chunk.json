@@ -4,12 +4,17 @@
     {
       "conditions": [
         {
-          "flag": "hephaestan_gold_making",
-          "type": "goldenglitter:flag"
+          "type": "goldenglitter:flag",
+          "flag": "hephaestan_gold_making"
         }
       ],
       "recipe": {
         "type": "fusion:alloying",
+        "catalyst": {
+          "item": "goldenglitter:scarlatite_gold_ingot"
+        },
+        "cookingtime": 600,
+        "experience": 16.0,
         "inputs": [
           {
             "item": "minecraft:lava_bucket"
@@ -18,14 +23,9 @@
             "item": "minecraft:lava_bucket"
           }
         ],
-        "catalyst": {
-          "item": "goldenglitter:scarlatite_gold_ingot"
-        },
         "output": {
           "item": "goldenglitter:large_hephaestan_gold_chunk"
-        },
-        "cookingtime": 600,
-        "experience": 16.0
+        }
       }
     }
   ]

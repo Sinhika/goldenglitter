@@ -1,5 +1,7 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 6.0,
   "ingredient": [
     {
       "item": "goldenglitter:scarlatite_gold_axe"
@@ -14,7 +16,5 @@
       "item": "goldenglitter:scarlatite_gold_sword"
     }
   ],
-  "result": "goldenglitter:scarlatite_gold_nugget",
-  "experience": 6.0,
-  "cookingtime": 200
+  "result": "goldenglitter:scarlatite_gold_nugget"
 }

@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 9.0,
   "ingredient": {
     "item": "goldenglitter:large_hephaestan_gold_chunk"
   },
-  "result": "goldenglitter:hephaestan_gold_ingot",
-  "experience": 9.0,
-  "cookingtime": 200
+  "result": "goldenglitter:hephaestan_gold_ingot"
 }

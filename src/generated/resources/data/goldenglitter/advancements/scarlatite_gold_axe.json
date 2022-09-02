@@ -1,22 +1,10 @@
 {
   "advancements": [
     {
-      "conditions": [
-        {
-          "flag": "scarlatite_gold_tools",
-          "type": "goldenglitter:flag"
-        }
-      ],
       "advancement": {
         "parent": "minecraft:recipes/root",
-        "rewards": {
-          "recipes": [
-            "goldenglitter:scarlatite_gold_axe"
-          ]
-        },
         "criteria": {
           "has_item": {
-            "trigger": "minecraft:inventory_changed",
             "conditions": {
               "items": [
                 {
@@ -25,15 +13,27 @@
                   ]
                 }
               ]
-            }
+            },
+            "trigger": "minecraft:inventory_changed"
           }
         },
         "requirements": [
           [
             "has_item"
           ]
-        ]
-      }
+        ],
+        "rewards": {
+          "recipes": [
+            "goldenglitter:scarlatite_gold_axe"
+          ]
+        }
+      },
+      "conditions": [
+        {
+          "type": "goldenglitter:flag",
+          "flag": "scarlatite_gold_tools"
+        }
+      ]
     }
   ]
 }

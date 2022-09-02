@@ -4,12 +4,17 @@
     {
       "conditions": [
         {
-          "flag": "scarlatite_gold_making",
-          "type": "goldenglitter:flag"
+          "type": "goldenglitter:flag",
+          "flag": "scarlatite_gold_making"
         }
       ],
       "recipe": {
         "type": "fusion:alloying",
+        "catalyst": {
+          "item": "goldenglitter:erubescent_gold_ingot"
+        },
+        "cookingtime": 600,
+        "experience": 12.0,
         "inputs": [
           {
             "item": "minecraft:redstone"
@@ -18,14 +23,9 @@
             "item": "minecraft:redstone"
           }
         ],
-        "catalyst": {
-          "item": "goldenglitter:erubescent_gold_ingot"
-        },
         "output": {
           "item": "goldenglitter:large_scarlatite_gold_chunk"
-        },
-        "cookingtime": 600,
-        "experience": 12.0
+        }
       }
     }
   ]

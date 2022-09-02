@@ -4,8 +4,8 @@
     {
       "conditions": [
         {
-          "flag": "red_gold_rails",
-          "type": "goldenglitter:flag"
+          "type": "goldenglitter:flag",
+          "flag": "red_gold_rails"
         }
       ],
       "recipe": {
@@ -40,8 +40,8 @@
           }
         ],
         "result": {
-          "item": "goldenglitter:red_gold_rail",
-          "count": 8
+          "count": 8,
+          "item": "goldenglitter:red_gold_rail"
         }
       }
     }

@@ -4,12 +4,17 @@
     {
       "conditions": [
         {
-          "flag": "recycle_golden_glitter",
-          "type": "goldenglitter:flag"
+          "type": "goldenglitter:flag",
+          "flag": "recycle_golden_glitter"
         }
       ],
       "recipe": {
         "type": "fusion:alloying",
+        "catalyst": {
+          "tag": "minecraft:coals"
+        },
+        "cookingtime": 600,
+        "experience": 20.0,
         "inputs": [
           [
             {
@@ -23,15 +28,10 @@
             "item": "minecraft:gravel"
           }
         ],
-        "catalyst": {
-          "tag": "minecraft:coals"
-        },
         "output": {
-          "item": "goldenglitter:rose_gold_ingot",
-          "count": 2
-        },
-        "cookingtime": 600,
-        "experience": 20.0
+          "count": 2,
+          "item": "goldenglitter:rose_gold_ingot"
+        }
       }
     }
   ]

@@ -1,5 +1,7 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.8,
   "ingredient": [
     {
       "item": "goldenglitter:rose_gold_axe"
@@ -29,7 +31,5 @@
       "item": "goldenglitter:rose_gold_sword"
     }
   ],
-  "result": "goldenglitter:rose_gold_nugget",
-  "experience": 0.8,
-  "cookingtime": 200
+  "result": "goldenglitter:rose_gold_nugget"
 }

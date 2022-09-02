@@ -4,17 +4,12 @@
     {
       "conditions": [
         {
-          "flag": "scarlatite_gold_tools",
-          "type": "goldenglitter:flag"
+          "type": "goldenglitter:flag",
+          "flag": "scarlatite_gold_tools"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "SS ",
-          "ST ",
-          " T "
-        ],
         "key": {
           "S": {
             "item": "goldenglitter:scarlatite_gold_ingot"
@@ -23,6 +18,11 @@
             "tag": "forge:rods/wooden"
           }
         },
+        "pattern": [
+          "SS ",
+          "ST ",
+          " T "
+        ],
         "result": {
           "item": "goldenglitter:scarlatite_gold_axe"
         }

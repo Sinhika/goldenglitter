@@ -1,9 +1,9 @@
 {
   "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.8,
   "ingredient": {
     "item": "goldenglitter:large_rose_gold_chunk"
   },
-  "result": "goldenglitter:rose_gold_ingot",
-  "experience": 0.8,
-  "cookingtime": 100
+  "result": "goldenglitter:rose_gold_ingot"
 }

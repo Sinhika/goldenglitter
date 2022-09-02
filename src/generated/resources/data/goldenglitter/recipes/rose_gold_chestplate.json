@@ -4,22 +4,22 @@
     {
       "conditions": [
         {
-          "flag": "rose_gold_armor",
-          "type": "goldenglitter:flag"
+          "type": "goldenglitter:flag",
+          "flag": "rose_gold_armor"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "S S",
-          "SSS",
-          "SSS"
-        ],
         "key": {
           "S": {
             "item": "goldenglitter:rose_gold_ingot"
           }
         },
+        "pattern": [
+          "S S",
+          "SSS",
+          "SSS"
+        ],
         "result": {
           "item": "goldenglitter:rose_gold_chestplate"
         }

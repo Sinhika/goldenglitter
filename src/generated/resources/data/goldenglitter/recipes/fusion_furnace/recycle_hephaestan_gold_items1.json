@@ -4,12 +4,17 @@
     {
       "conditions": [
         {
-          "flag": "recycle_golden_glitter",
-          "type": "goldenglitter:flag"
+          "type": "goldenglitter:flag",
+          "flag": "recycle_golden_glitter"
         }
       ],
       "recipe": {
         "type": "fusion:alloying",
+        "catalyst": {
+          "item": "minecraft:lava_bucket"
+        },
+        "cookingtime": 600,
+        "experience": 25.0,
         "inputs": [
           [
             {
@@ -29,14 +34,9 @@
             "item": "minecraft:gravel"
           }
         ],
-        "catalyst": {
-          "item": "minecraft:lava_bucket"
-        },
         "output": {
           "item": "goldenglitter:hephaestan_gold_ingot"
-        },
-        "cookingtime": 600,
-        "experience": 25.0
+        }
       }
     }
   ]

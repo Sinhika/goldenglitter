@@ -1,5 +1,7 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 9.0,
   "ingredient": [
     {
       "item": "goldenglitter:hephaestan_gold_axe"
@@ -14,7 +16,5 @@
       "item": "goldenglitter:hephaestan_gold_sword"
     }
   ],
-  "result": "goldenglitter:hephaestan_gold_nugget",
-  "experience": 9.0,
-  "cookingtime": 200
+  "result": "goldenglitter:hephaestan_gold_nugget"
 }
