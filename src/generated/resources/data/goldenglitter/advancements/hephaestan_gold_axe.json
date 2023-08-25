@@ -26,7 +26,8 @@
           "recipes": [
             "goldenglitter:hephaestan_gold_axe"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

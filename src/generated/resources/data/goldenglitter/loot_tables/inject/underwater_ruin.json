@@ -42,5 +42,6 @@
         "min": 1.0
       }
     }
-  ]
+  ],
+  "random_sequence": "goldenglitter:inject/underwater_ruin"
 }

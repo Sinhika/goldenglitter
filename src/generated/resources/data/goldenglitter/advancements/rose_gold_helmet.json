@@ -26,7 +26,8 @@
           "recipes": [
             "goldenglitter:rose_gold_helmet"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

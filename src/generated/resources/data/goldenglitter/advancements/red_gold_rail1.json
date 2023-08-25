@@ -26,7 +26,8 @@
           "recipes": [
             "goldenglitter:red_gold_rail1"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {
