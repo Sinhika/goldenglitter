@@ -1,12 +1,15 @@
 package mod.akkamaddi.goldenglitter.datagen;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 import mod.akkamaddi.goldenglitter.GoldenGlitter;
 import mod.akkamaddi.goldenglitter.init.ModBlocks;
 import mod.alexndr.simplecorelib.api.datagen.MiningBlockTags;
 import mod.alexndr.simplecorelib.api.helpers.TagUtils;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.HolderLookup.Provider;
+import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -14,15 +17,16 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlockTags extends MiningBlockTags
 {
-    public ModBlockTags(DataGenerator generatorIn, ExistingFileHelper existingFileHelper)
+    public ModBlockTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
+			ExistingFileHelper existingFileHelper)
     {
-        super(generatorIn, GoldenGlitter.MODID, existingFileHelper);
+        super(output, lookupProvider, GoldenGlitter.MODID, existingFileHelper);
     }
 
     @Override
-    protected void addTags()
+    protected void addTags(Provider pProvider)
     {
-        super.addTags();
+        super.addTags(pProvider);
         registerStorageBlockTags();
         registerBeaconBlockTags();
         registerRailTags();
@@ -87,5 +91,11 @@ public class ModBlockTags extends MiningBlockTags
         this.tag(BlockTags.RAILS)
             .add(ModBlocks.red_gold_rail.get());
     }
+
+	@Override
+	protected void registerOreTags() {
+		// TODO Auto-generated method stub
+		
+	}
      
 } // end class

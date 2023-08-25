@@ -8,8 +8,9 @@ import mod.akkamaddi.goldenglitter.init.ModBlocks;
 import mod.akkamaddi.goldenglitter.init.ModItems;
 import mod.alexndr.simplecorelib.api.datagen.ISimpleConditionBuilder;
 import mod.alexndr.simplecorelib.api.datagen.RecipeSetBuilder;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
@@ -23,14 +24,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
 {
     private RecipeSetBuilder setbuilder;
 
-    public Recipes(DataGenerator generatorIn)
+    public Recipes(PackOutput pOutput)
     {
-        super(generatorIn);
+        super(pOutput);
         setbuilder = new RecipeSetBuilder(GoldenGlitter.MODID);
     }
 
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer)
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer)
     {
         registerStorageRecipes(consumer);
         registerMiscRecipes(consumer);
@@ -104,7 +105,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
         ResourceLocation red_gold_rails2 = new ResourceLocation(GoldenGlitter.MODID, "red_gold_rail2");
         
         ConditionalRecipe.builder().addCondition(flag("red_gold_rails"))
-            .addRecipe( ShapelessRecipeBuilder.shapeless(ModBlocks.red_gold_rail.get().asItem(), 3)
+            .addRecipe( ShapelessRecipeBuilder.shapeless(RecipeCategory.TRANSPORTATION,ModBlocks.red_gold_rail.get().asItem(), 3)
                 .requires(ModItems.erubescent_gold_ingot.get())
                 .requires(Ingredient.of(Blocks.RAIL), 3)
                 .unlockedBy("has_item", has(ModItems.erubescent_gold_ingot.get()))
@@ -115,7 +116,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
             .build(consumer, red_gold_rails1);
            
         ConditionalRecipe.builder().addCondition(flag("red_gold_rails"))
-            .addRecipe( ShapelessRecipeBuilder.shapeless(ModBlocks.red_gold_rail.get().asItem(), 8)
+            .addRecipe( ShapelessRecipeBuilder.shapeless(RecipeCategory.TRANSPORTATION, ModBlocks.red_gold_rail.get().asItem(), 8)
                 .requires(ModItems.scarlatite_gold_ingot.get())
                 .requires(Ingredient.of(Blocks.RAIL), 8)
                 .unlockedBy("has_item", has(ModItems.scarlatite_gold_ingot.get()))

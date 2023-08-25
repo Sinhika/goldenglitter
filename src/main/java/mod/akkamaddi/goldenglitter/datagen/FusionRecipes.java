@@ -8,10 +8,10 @@ import mod.akkamaddi.goldenglitter.GoldenGlitter;
 import mod.akkamaddi.goldenglitter.config.GoldenConfig;
 import mod.akkamaddi.goldenglitter.init.ModItems;
 import mod.akkamaddi.goldenglitter.init.ModTags;
+import mod.alexndr.fusion.api.datagen.AbstractFusionRecipeProvider;
 import mod.alexndr.fusion.api.datagen.FusionRecipeSetBuilder;
-import mod.alexndr.fusion.api.recipe.AbstractFusionRecipeProvider;
 import mod.alexndr.simplecorelib.api.datagen.ISimpleConditionBuilder;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
@@ -24,14 +24,14 @@ public class FusionRecipes extends AbstractFusionRecipeProvider implements ICond
 {
     private FusionRecipeSetBuilder fusionbuilder;
 
-    public FusionRecipes(DataGenerator generatorIn)
+    public FusionRecipes(PackOutput pOutput)
     {
-        super(generatorIn);
+        super(pOutput);
         fusionbuilder = new FusionRecipeSetBuilder(GoldenGlitter.MODID);
     }
 
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer)
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer)
     {
         registerRoseGoldRecipes(consumer);
         registerErubescentGoldRecipes(consumer);
@@ -158,5 +158,6 @@ public class FusionRecipes extends AbstractFusionRecipeProvider implements ICond
         // TODO Auto-generated method stub
         return impl_flag(GoldenGlitter.MODID, GoldenConfig.INSTANCE, name);
     }
+
 
 } // end class

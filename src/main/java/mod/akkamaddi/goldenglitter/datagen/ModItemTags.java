@@ -1,29 +1,35 @@
 package mod.akkamaddi.goldenglitter.datagen;
 
+import java.util.concurrent.CompletableFuture;
+
 import mod.akkamaddi.goldenglitter.GoldenGlitter;
 import mod.akkamaddi.goldenglitter.init.ModBlocks;
 import mod.akkamaddi.goldenglitter.init.ModItems;
 import mod.alexndr.simplecorelib.api.datagen.MiningItemTags;
 import mod.alexndr.simplecorelib.api.helpers.TagUtils;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ModItemTags extends MiningItemTags
 {
 
-    public ModItemTags(DataGenerator dataGenerator, ExistingFileHelper existingFileHelper)
+    public ModItemTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
+			CompletableFuture<TagLookup<Block>> blockTagProvider, ExistingFileHelper existingFileHelper)
     {
-        super(dataGenerator, new ModBlockTags(dataGenerator, existingFileHelper), GoldenGlitter.MODID, 
-              existingFileHelper);
+        super(output, lookupProvider, blockTagProvider, GoldenGlitter.MODID, existingFileHelper);
     }
 
     @Override
-    protected void addTags()
+    protected void addTags(HolderLookup.Provider lookupProvider)
     {
-        super.addTags();
+        super.addTags(lookupProvider);
         registerNuggetTags();
         registerIngotTags();
         registerStorageBlockTags();
+        registerToolTags(ModItems.ITEMS);
+        registerArmorTags(ModItems.ITEMS);
     }
 
     /**
