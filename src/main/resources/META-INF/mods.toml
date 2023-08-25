@@ -4,55 +4,50 @@ modLoader="javafml"
 loaderVersion="[43,)" 
 # The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
-license="LGPL 3.0"
+license="${mod_license}"
 # A URL to refer people to when problems occur with this mod
 issueTrackerURL="https://github.com/Sinhika/goldenglitter/issues"
-# A list of mods - how many allowed here is determined by the individual mod loader
+
 [[mods]]
 # The modid of the mod
-modId="goldenglitter"
-# The version number of the mod
-version="${file.jarVersion}"
- # A display name for the mod
-displayName="akkamaddi's Golden Glitter"
-# A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
-updateJSONURL="https://raw.githubusercontent.com/Sinhika/goldenglitter/1.19/update.json" 
+modId="${mod_id}"
+version="${version}"
+displayName="${mod_name}"
+updateJSONURL="https://raw.githubusercontent.com/Sinhika/${mod_id}/1.20/update.json" 
 # A URL for the "homepage" for this mod, displayed in the mod UI
 displayURL="https://www.curseforge.com/minecraft/mc-mods/akkamaddis-golden-glitter"
 # A file name (in the root of the mod JAR) containing a logo for display
 #logoFile="examplemod.png" #optional
-# A text field displayed in the mod UI
 credits="Created by akkamaddi, reliant on AleXndrTheGr8st, maintained by Sinhika"
-# A text field displayed in the mod UI
-authors="akkamaddi, Sinhika" 
+authors="${mod_authors}" 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
 Four gold alloys, plus a self-powered rail.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.goldenglitter]] #optional
+[[dependencies.${mod_id}]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     mandatory=true #mandatory
-    versionRange="[43,)" #mandatory
+    versionRange="${forge_version_range}" #mandatory
     ordering="NONE"
     side="BOTH"
 # Here's another dependency
-[[dependencies.goldenglitter]]
+[[dependencies.${mod_id}]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.2, 1.19.3)"
+    versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
-[[dependencies.goldenglitter]]
+[[dependencies.${mod_id}]]
     modId="simplecorelib"
     mandatory=true
-    versionRange="[1.19.2-5.1.0.2, 1.19.2-5.2.0.0)"
+    versionRange="${simplecore_range}"
     ordering="NONE"
     side="BOTH"
-[[dependencies.goldenglitter]]
+[[dependencies.${mod_id}]]
     modId="fusion"
     mandatory=true
-    versionRange="[1.19.2-5.1.0.0, 1.19.2-5.2.0.0)"
+    versionRange="${fusion_range}"
     ordering="NONE"
     side="BOTH"
